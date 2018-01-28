@@ -1,24 +1,28 @@
-# README
+[WIP]ParkIndex
+====
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Overview
 
-Things you may want to cover:
+## Description
 
-* Ruby version
+## Demo
 
-* System dependencies
+## Requirement
+Ruby 2.4.3
+Rails 5.1.2
 
-* Configuration
+## Usage
+```sh:
+docker-compose up
 
-* Database creation
+## Install
 
-* Database initialization
+## Contribution
 
-* How to run the test suite
+## Licence
 
-* Services (job queues, cache servers, search engines, etc.)
+[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
 
-* Deployment instructions
+## Author
 
-* ...
+[k33asby](https://github.com/k33asby)
