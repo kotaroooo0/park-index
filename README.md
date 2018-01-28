@@ -8,7 +8,7 @@ Overview
 ## Demo
 
 ## Requirement
-Ruby 2.4.3
+Ruby 2.4.3  
 Rails 5.1.2
 
 ## Usage
