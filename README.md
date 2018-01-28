@@ -14,6 +14,7 @@ Rails 5.1.2
 ## Usage
 ```sh:
 docker-compose up
+```
 
 ## Install
 
