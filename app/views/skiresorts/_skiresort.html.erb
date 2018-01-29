@@ -1,5 +1,17 @@
-<div>
-  <div>skiresort.name</div>
-  <div>skiresort.prefecture</div>
-  <div>skiresort.area</div>
-</div>
+<li>
+  <div>
+    <%= image_tag 'sample_skiresort.jpg' , width: 300 %>
+  </div>
+  <div>
+    <%= skiresort.name %>
+  </div>
+  <div>
+    <%= fa_icon "map-marker" %> <%= skiresort.prefecture %>
+  </div>
+  <div>
+    <%= fa_icon "area-chart" %> <%= skiresort.area %>
+  </div>
+  <div>
+    <%= link_to "詳細...", skiresort %>
+  </div>
+</li>

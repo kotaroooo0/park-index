@@ -1,7 +1,17 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Skiresort.create!(name: '白馬47', prefecture: '長野', area: '白馬')
+Skiresort.create!(name: '白馬五竜', prefecture: '長野', area: '白馬')
+Skiresort.create!(name: '白馬岩岳', prefecture: '長野', area: '白馬')
+Skiresort.create!(name: '栂池高原', prefecture: '長野', area: '白馬')
+Skiresort.create!(name: 'X-JAM高井富士', prefecture: '長野', area: '北志賀')
+Skiresort.create!(name: '竜王スキーパーク', prefecture: '長野', area: '北志賀')
+Skiresort.create!(name: '妙高杉ノ原', prefecture: '新潟', area: '妙高')
+Skiresort.create!(name: '池の平温泉', prefecture: '新潟', area: '妙高')
+Skiresort.create!(name: '赤倉観光', prefecture: '新潟', area: '妙高')
+Skiresort.create!(name: '琵琶湖バレイ', prefecture: '滋賀', area: '関西')
+Skiresort.create!(name: 'スキージャム勝山', prefecture: '福井', area: '北陸')
+Skiresort.create!(name: '福井和泉', prefecture: '福井', area: '北陸')
+Skiresort.create!(name: '今庄365', prefecture: '福井', area: '北陸')
+Skiresort.create!(name: '鷲ヶ岳', prefecture: '岐阜', area: '奥美濃')
+Skiresort.create!(name: '高鷲スノーパーク', prefecture: '岐阜', area: '奥美濃')
+Skiresort.create!(name: 'ダイナランド', prefecture: '岐阜', area: '奥美濃')
+Skiresort.create!(name: 'めいほう', prefecture: '岐阜', area: '奥美濃')
