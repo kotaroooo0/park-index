@@ -16,6 +16,20 @@ h1 {
   }
 }
 
+// parks index
+.parks-index {
+  li {
+    list-style: none;
+    float: left;
+    border: solid 1px #eee;
+    padding: 0;
+    margin: 20px;
+    a {
+      color: black
+    }
+  }
+}
+
 // footer
 .footer {
   padding-top: 20px;

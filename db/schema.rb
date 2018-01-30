@@ -15,7 +15,8 @@ ActiveRecord::Schema.define(version: 20180129160940) do
   create_table "parks", force: :cascade do |t|
     t.string "name"
     t.integer "item"
-    t.string "lebel"
+    t.string "level"
+    t.integer "skiresort_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 20180129160940) do
     t.string "name"
     t.string "prefecture"
     t.string "area"
+    t.integer "park_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,17 @@
+<li>
+  <div>
+    <%= image_tag 'sample_skiresort.jpg' , width: 300 %>
+  </div>
+  <div>
+    <%= park.name %>
+  </div>
+  <div>
+    <%= fa_icon "fighter-jet" %> <%= park.item %>
+  </div>
+  <div>
+    <%= fa_icon "check-square-o" %> <%= park.level %>
+  </div>
+  <div>
+    <%= link_to "詳細...", park %>
+  </div>
+</li>

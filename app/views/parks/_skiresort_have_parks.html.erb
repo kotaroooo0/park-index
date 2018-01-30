@@ -1,0 +1,20 @@
+<li>
+  <div>
+    <%= image_tag 'sample_skiresort.jpg' , width: 300 %>
+  </div>
+  <div>
+    <%= skiresort_have_parks.name %>
+  </div>
+  <div>
+    <%= fa_icon "map-marker" %> <%= skiresort_have_parks.prefecture %>
+  </div>
+  <div>
+    <%= fa_icon "area-chart" %> <%= skiresort_have_parks.area %>
+  </div>
+  <div>
+    <%= link_to "詳細...", skiresort_have_parks %>
+  </div>
+  <ul class="parks-index">
+    <%= render :partial => "parks/park", :collection => skiresort_have_parks.parks %>
+  </ul>
+</li>

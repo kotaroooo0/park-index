@@ -4,6 +4,7 @@ class CreateSkiresorts < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :prefecture
       t.string :area
+      t.integer :park_count, default: 0
 
       t.timestamps
     end
