@@ -7,15 +7,15 @@
   <div class="collapse navbar-collapse" id="Navber">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">ホーム <span class="sr-only">(現位置)</span></a>
+        <%= link_to "ホーム", root_path, class: "nav-link" %>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <%= link_to "スキー場", skiresorts_path, class: "nav-link" %>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <%= link_to "パーク", parks_path, class: "nav-link" %>
       </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown active">
         <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Account
         </a>
