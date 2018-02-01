@@ -6,16 +6,19 @@
 
   <div class="collapse navbar-collapse" id="Navber">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item <%= 'active' if (controller.controller_name + controller.action_name) == 'static_pageshome' %>">
         <%= link_to "ホーム", root_path, class: "nav-link" %>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item <%= 'active' if (controller.controller_name + controller.action_name) == 'skiresortsindex' %>">
         <%= link_to "スキー場", skiresorts_path, class: "nav-link" %>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item <%= 'active' if (controller.controller_name + controller.action_name) == 'parksindex' %>">
         <%= link_to "パーク", parks_path, class: "nav-link" %>
       </li>
-      <li class="nav-item dropdown active">
+      <li class="nav-item <%= 'active' if (controller.controller_name + controller.action_name) == 'static_pageslogin' %>">
+        <%= link_to "ログイン",login_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Account
         </a>

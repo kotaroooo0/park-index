@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+# default
 gem 'rails', '~> 5.1.2'
 gem 'sqlite3'
 gem 'puma', '~> 3.7'
@@ -14,9 +14,21 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+
+# for fontend
 gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap-social-rails'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
+
+# for login
+gem 'config'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-instagram'
+
 
 
 group :development, :test do
