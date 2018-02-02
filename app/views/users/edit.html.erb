@@ -1,0 +1,29 @@
+<div class="mt-3">
+  <div class="row">
+    <%= form_for(@user, url: user_path) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <%= image_tag(@user.image, {alt: "profile_image", size: 100, class: "rounded"}) %>
+    <div class="area-form">
+      <%= f.label "エリア" %>
+      <%= f.text_field :area, class: 'form-control', placeholder: @user.area %>
+    </div>
+    <div class="name-form">
+      <%= f.label "名前" %>
+      <%= f.text_field :name, class: 'form-control', required: true, placeholder: @user.name %>
+    </div>
+    <div class="gender-form">
+      <%= f.label "性別" %>
+      <%= f.select :gender, User.genders.keys.to_a, { include_blank: true }, class: "form-control", placeholder: @user.gender %>
+    </div>
+    <div class="age-form">
+      <%= f.label "年齢" %>
+      <%= f.text_field :age, class: 'form-control', required: true, placeholder: @user.age %>
+    </div>
+    <div class="submit-link">
+      <div class="text-center mt-3">
+        <%= f.submit "変更を保存", class: "btn btn-success" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

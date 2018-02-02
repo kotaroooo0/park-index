@@ -1,3 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+
+  include SessionsHelper
+
+  def logged_in_member?
+    return if logged_in?
+    store_location
+    flash[:danger] = "ログインしてください"
+    redirect_to login_url
+  end
+
 end

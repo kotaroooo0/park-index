@@ -49,6 +49,9 @@ GEM
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
+    bootstrap-form (3.0.0)
+      actionpack (> 3.2)
+      railties (> 3.2)
     bootstrap-social-rails (4.12.0)
       railties (>= 3.1)
     builder (3.2.3)
@@ -267,6 +270,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap (~> 4.0.0)
+  bootstrap-form
   bootstrap-social-rails
   byebug
   capybara (~> 2.13)
