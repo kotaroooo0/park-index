@@ -12,4 +12,11 @@ class Skiresort < ApplicationRecord
 
   validates :park_count, presence: true
 
+  def self.search(query)
+    if query
+      Skiresort.where(['name LIKE ?', "%#{query}%"])
+    else
+      Skiresort.all
+    end
+  end
 end

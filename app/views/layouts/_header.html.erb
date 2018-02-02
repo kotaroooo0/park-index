@@ -33,9 +33,9 @@
       </li>
       <% end %>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input type="search" class="form-control mr-sm-2" placeholder="キーワードを入力" aria-label="検索...">
-      <button type="submit" class="btn btn-outline-light my-2 my-sm-0">検索</button>
-    </form>
+    <%= form_tag skiresorts_path, method: :get, class: "form-inline my-2 my-lg-0" do %>
+    <%= text_field_tag(:search, params[:search], placeholder: "スキー場を入力", class: "form-control mr-sm-2") %>
+    <%= submit_tag "検索", class: "btn btn-outline-light my-2 my-sm-0" %>
+    <% end %>
   </div>
 </nav>

@@ -1,7 +1,7 @@
 class SkiresortsController < ApplicationController
 
   def index
-    @skiresorts = Skiresort.all
+    @skiresorts = Skiresort.search(params[:search])
   end
 
   def show
