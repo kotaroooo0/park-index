@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180130154545) do
+ActiveRecord::Schema.define(version: 20180202065835) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "park_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["park_id"], name: "index_comments_on_park_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "parks", force: :cascade do |t|
     t.string "name"
     t.integer "item"
     t.string "level"
     t.integer "skiresort_id"
+    t.integer "comment_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,6 +47,7 @@ ActiveRecord::Schema.define(version: 20180130154545) do
     t.integer "gender"
     t.string "area"
     t.string "image"
+    t.integer "comment_count", default: 0
     t.string "provider"
     t.string "uid"
     t.datetime "created_at", null: false

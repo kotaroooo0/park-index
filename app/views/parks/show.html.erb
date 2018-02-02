@@ -8,3 +8,13 @@
 <div>
   <%= fa_icon "check-square-o" %> <%= @park.level %>
 </div>
+
+<div class="comments">
+  <%=  "まだ、このパークに対するコメントはありません。" if @park.comments.blank? %>
+  <ul>
+    <%= render :partial => "comments/comment", :collection => @park.comments.order("id DESC").limit(6) %>
+  </ul>
+</div>
+<% if logged_in? %>
+<%= render :partial => "comments/comment_form" %>
+<% end %>

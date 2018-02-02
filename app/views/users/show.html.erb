@@ -28,6 +28,12 @@
         (年齢が未設定です)
         <% end %>
       </div>
+      <div class="comments">
+        <%=  "このユーザーはまだコメントしていません。" if @user.comments.blank? %>
+        <ul>
+          <%= render :partial => "comments/comment", :collection => @user.comments.order("id DESC").limit(6) %>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

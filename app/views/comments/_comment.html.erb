@@ -1,0 +1,13 @@
+<li id="comment-<%= comment.id %>" class="list-inline">
+  <%= link_to (image_tag(comment.user.image, {alt: "profile_pic", size: 30, class: "rounded"})), comment.user %>
+  <div class="user"><%= link_to comment.user.name, comment.user %></div>
+  <div class="content">
+    <%= comment.body %>
+  </div>
+  <div class="created">
+    <%= comment.created_at.strftime("%Y-%m-%d") %>
+  </div>
+  <% if current_user?(comment.user) %>
+  <%= link_to "削除", comment, method: :delete, data: { confirm: "本当に削除しますか?" }, :class => "btn btn-default btn-sm" %>
+  <% end %>
+</li>

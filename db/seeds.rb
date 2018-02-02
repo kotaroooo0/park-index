@@ -28,3 +28,13 @@ User.create!(name: 'Kotaro Adachi', age: 21, gender: 0, area: "関西", image: "
 User.create!(name: 'Kento Okui', age: 22, gender: 0, area: "関東", image: "https://avatars0.githubusercontent.com/u/31947384?s=400&v=4")
 User.create!(name: 'Shogo Uenishi', age: 23, gender: 1, area: "北海道", image: "https://avatars0.githubusercontent.com/u/31947384?s=400&v=4")
 User.create!(name: 'Yuta Okuno', age: 24, gender: 1, area: "東海", image: "https://avatars0.githubusercontent.com/u/31947384?s=400&v=4")
+
+parks_index = [1, 2, 3, 4]
+users_index = [1, 2, 3, 4]
+body = "このパークはとてもhogeでとてもhugaだった。最高にバイブスが上がるキッカーがあった。レールもしっかり整備されていて綺麗なリップだった。とても満足したのでまた訪れたい。"
+
+parks_index.each do |p_i|
+  users_index.each do |u_i|
+    Comment.create!(park_id: p_i, user_id: u_i, body: body)
+  end
+end

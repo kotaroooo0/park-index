@@ -17,6 +17,10 @@ module SessionsHelper
     redirect_to root_path, alert: 'ログインしてください'
   end
 
+  def current_user?(user)
+    user == current_user
+  end
+
   def redirect_back_or(default)
     redirect_to(session[:forwording_url] || default)
     session.delete(:forwording_url)

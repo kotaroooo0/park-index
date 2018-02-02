@@ -3,11 +3,15 @@ class ApplicationController < ActionController::Base
 
   include SessionsHelper
 
-  def logged_in_member?
+  def logged_in_user?
     return if logged_in?
     store_location
     flash[:danger] = "ログインしてください"
     redirect_to login_url
   end
 
+  def simple_time(time)
+    time.strftime("%Y-%m-%d　%H:%M　")
+  end
+    
 end

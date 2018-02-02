@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.integer :gender
       t.string :area
       t.string :image
+      t.integer :comment_count, default: 0
       t.string :provider
       t.string :uid
 
