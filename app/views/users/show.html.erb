@@ -1,0 +1,33 @@
+<div class="mt-3">
+  <div class="row">
+    <div class="col-md-2">
+      <%= image_tag(@user.image, {alt: "profile_pic", size: 100, class: "rounded"}) %>
+    </div>
+    <div class="col-md-10">
+      <span class="area">
+        <% if @user.area.present? %>
+        <%= @user.area %>
+        <% else %>
+        (エリアは未設定です)
+        <% end %>
+      </span>
+      <div class="name">
+        <% if @user.name.present? %>
+        <%= @user.name %>
+        <% else %>
+        (名前が未設定です)
+        <% end %>
+      </div>
+      <div class="age">
+        <% if @user.gender.present? %>
+        <%= fa_icon @user.gender %>
+        <% end %>
+        <% if @user.age.present? %>
+        <%= @user.age %>
+        <% else %>
+        (年齢が未設定です)
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

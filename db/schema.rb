@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20180130154545) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "age"
-    t.string "gender"
+    t.integer "age"
+    t.integer "gender"
     t.string "area"
     t.string "image"
     t.string "provider"

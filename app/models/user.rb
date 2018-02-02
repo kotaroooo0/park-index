@@ -1,5 +1,7 @@
 class User < ApplicationRecord
 
+  enum gender: { male: 0, female: 1 }
+
   def self.create_with_facebook(auth)
     create! do |user|
       user.provider = auth["provider"]

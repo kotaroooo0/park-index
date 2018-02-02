@@ -23,3 +23,8 @@ Park.create!(name: 'メインパーク', item: 10, level: '7~9', skiresort_id: 5
 Park.create!(name: '宮パー', item: 6, level: '5~7', skiresort_id: 5)
 Park.create!(name: 'チャレンジパーク', item: 10, level: '1~4', skiresort_id: 5)
 Park.create!(name: 'The active', item: 40, level: '1~10', skiresort_id: 14)
+
+User.create!(name: 'Kotaro Adachi', age: 21, gender: 0, area: "関西", image: "https://avatars0.githubusercontent.com/u/31947384?s=400&v=4")
+User.create!(name: 'Kento Okui', age: 22, gender: 0, area: "関東", image: "https://avatars0.githubusercontent.com/u/31947384?s=400&v=4")
+User.create!(name: 'Shogo Uenishi', age: 23, gender: 1, area: "北海道", image: "https://avatars0.githubusercontent.com/u/31947384?s=400&v=4")
+User.create!(name: 'Yuta Okuno', age: 24, gender: 1, area: "東海", image: "https://avatars0.githubusercontent.com/u/31947384?s=400&v=4")
