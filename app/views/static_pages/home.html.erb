@@ -1,5 +1,81 @@
 <div class="row">
-  <div class="col-md-12">
-     hello, world!
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= image_tag 'root_1.jpg' , class: "d-block w-100" %>
+        <div class="carousel-caption d-none d-md-block text-left pb-0">
+          <span class="carousel-caption-logo"><%= fa_icon "product-hunt", class: "fa-lg"%>ARKINDEX</span>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag 'root_2.jpg' , class: "d-block w-100" %>
+        <div class="carousel-caption d-none d-md-block text-left pb-0">
+          <span class="carousel-caption-logo"><%= fa_icon "product-hunt", class: "fa-lg"%>ARKINDEX</span>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag 'root_3.jpg' , class: "d-block w-100" %>
+        <div class="carousel-caption d-none d-md-block text-left pb-0">
+          <span class="carousel-caption-logo"><%= fa_icon "product-hunt", class: "fa-lg"%>ARKINDEX</span>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      >
+    </a>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-12 mb-2">
+      <h3>なにができる?</h3>
+    </div>
+    <div class="col-sm-6 col-md-4 mt-1">
+      <div class="card img-thumbnail">
+        <%= image_tag 'card_1.jpg' , class: "card-img-top" %>
+        <div class="card-body px-2 py-3">
+          <h5 class="card-title">スキー場</h5>
+          <p class="card-text">スキー場の詳しい情報を知ることができる</p>
+          <p class="mb-0"><a href="#" class="btn btn-success btn-sm">詳しく</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4 mt-1">
+      <div class="card img-thumbnail">
+        <%= image_tag 'card_2.jpg' , class: "card-img-top" %>
+        <div class="card-body px-2 py-3">
+          <h5 class="card-title">パーク</h5>
+          <p class="card-text">最近のレイアウトなどパーク情報を得ることができる</p>
+          <p class="mb-0"><a href="#" class="btn btn-success btn-sm">詳しく</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4 mt-1">
+      <div class="card img-thumbnail">
+        <%= image_tag 'card_3.jpg' , class: "card-img-top" %>
+        <div class="card-body px-2 py-3">
+          <h5 class="card-title">レビュー</h5>
+          <p class="card-text">パークについてレビューを見たり、書いたりできる</p>
+          <p class="mb-0"><a href="#" class="btn btn-success btn-sm">詳しく</a></p>
+        </div>
+      </div>
+    </div><div class="col-sm-6 col-md-4 mt-1">
+      <div class="card img-thumbnail">
+        <%= image_tag 'card_4.jpg' , class: "card-img-top" %>
+        <div class="card-body px-2 py-3">
+          <h5 class="card-title">いいね</h5>
+          <p class="card-text">レビューに対して、いいねなどを送ることができる</p>
+          <p class="mb-0"><a href="#" class="btn btn-success btn-sm">詳しく</a></p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
