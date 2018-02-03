@@ -11,7 +11,8 @@ class SkiresortsController < ApplicationController
   end
 
   def show
-    @skiresort = Skiresort.find(params[:id]).includes(:parks)
+    @skiresort = Skiresort.find(params[:id])
+    @parks = @skiresort.parks
   end
 
 end
