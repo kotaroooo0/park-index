@@ -16,6 +16,7 @@ module ParkIndex
     # -- all .rb files in that directory are automatically loaded.
 
     config.time_zone = 'Asia/Tokyo'
+    config.i18n.default_locale = :ja
 
   end
 end

@@ -4,13 +4,20 @@
       <%= image_tag(@user.image, {alt: "profile_pic", size: 100, class: "rounded"}) %>
     </div>
     <div class="col-md-10">
-      <span class="area">
+      <div class="area">
         <% if @user.area.present? %>
         <%= @user.area %>
         <% else %>
         (エリアは未設定です)
         <% end %>
-      </span>
+      </div>
+      <div class="homegelaende">
+        <% if @user.home_gelaende.present? %>
+        <%= @user.home_gelaende %>
+        <% else %>
+        (ホームゲレンデは未設定です)
+        <% end %>
+      </div>
       <div class="name">
         <% if @user.name.present? %>
         <%= @user.name %>
@@ -26,6 +33,13 @@
         <%= @user.age %>
         <% else %>
         (年齢が未設定です)
+        <% end %>
+      </div>
+      <div class="selfintroduction">
+        <% if @user.self_introduction.present? %>
+        <%= @user.self_introduction %>
+        <% else %>
+        (自己紹介が未設定です)
         <% end %>
       </div>
       <div class="comments">

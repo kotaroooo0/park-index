@@ -21,6 +21,9 @@ gem 'bootstrap-social-rails'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
 
+# for model
+gem 'enum_help'
+
 # for login
 gem 'config'
 gem 'devise'
