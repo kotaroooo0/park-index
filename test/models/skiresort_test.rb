@@ -30,6 +30,4 @@ class SkiresortTest < ActiveSupport::TestCase
     assert_not @skiresort.valid?
   end
 
-
-
 end

@@ -11,4 +11,6 @@ class Park < ApplicationRecord
 
   validates :skiresort_id, presence: true
 
+  validates :comment_count, presence: true
+
 end

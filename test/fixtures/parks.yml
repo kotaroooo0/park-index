@@ -1,1 +1,6 @@
-
+valid_park:
+  name: "47parks"
+  item: 20
+  level: "1-10"
+  skiresort_id: 1
+  comment_count: 1
