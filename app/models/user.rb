@@ -9,8 +9,8 @@ class User < ApplicationRecord
   enum gender: { male: 0, female: 1 }
 
   enum area: {
-    北海道:1,東北:2,関東:3,中部:4,東海:5,関西:6,
-    中国:7,四国:8,九州:9,沖縄:10
+    北海道:0,東北:1,関東:2,中部:3,東海:4,関西:5,
+    中国:6,四国:7,九州:8,沖縄:9
   }
 
   def self.create_with_facebook(auth)
@@ -18,7 +18,7 @@ class User < ApplicationRecord
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.name = auth["info"]["name"]
-      user.image = auth["info"]["image"]
+      user.image = auth["info"]["image"] || "profile_pic.jpg"
     end
   end
 
