@@ -10,9 +10,9 @@
 </div>
 
 <div class="comments">
-  <%=  "まだ、このパークに対するコメントはありません。" if @park.comments.blank? %>
+  <%=  "まだ、このパークに対するコメントはありません。" if @comments.blank? %>
   <ul>
-    <%= render :partial => "comments/comment", :collection => @park.comments.order("id DESC").limit(6) %>
+    <%= render :partial => "comments/comment", :collection => @comments %>
   </ul>
 </div>
 <% if logged_in? %>

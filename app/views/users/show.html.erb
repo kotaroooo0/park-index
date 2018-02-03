@@ -43,9 +43,9 @@
         <% end %>
       </div>
       <div class="comments">
-        <%=  "このユーザーはまだコメントしていません。" if @user.comments.blank? %>
+        <%=  "このユーザーはまだコメントしていません。" if @comments.blank? %>
         <ul>
-          <%= render :partial => "comments/comment", :collection => @user.comments.order("id DESC").limit(6) %>
+          <%= render :partial => "comments/comment", :collection => @comments %>
         </ul>
       </div>
     </div>

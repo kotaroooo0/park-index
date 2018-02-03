@@ -8,14 +8,4 @@ class SkiresortsController < ApplicationController
     @skiresort = Skiresort.find(params[:id])
   end
 
-  def new
-  end
-
-  def edit
-  end
-
-  def upadate
-  end
-
-
 end
