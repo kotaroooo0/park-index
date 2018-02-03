@@ -1,6 +1,15 @@
-<h1>スキー場情報</h1>
 <div class="row">
-  <ul class="skiresorts-index">
-    <%= render @skiresorts %>
-  </ul>
+  <div class="col-md-12">
+    <div class="card text-black mt-4 mb-4" style="background-color: #eee">
+      <div class="card-header">
+        <h3 class="card-title"><%= fa_icon "compass" %> <%= @skiresorts.first.area %></h3>
+        <p class="card-text area-introduciton"><%= fa_icon "share-square" %> このエリアはとにかくすごい。ありえん多いスキー場。ありえんパウダースノー。ありえん多いエリアなどが含まれる。あああああああああああ、いきたい！</p>
+      </div>
+      <div class="card-body bg-white">
+        <div class="card-columns">
+          <%= render @skiresorts %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

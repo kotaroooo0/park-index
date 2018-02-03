@@ -4,6 +4,10 @@ class Skiresort < ApplicationRecord
 
   scope :have_parks, -> {where.not(park_count: 0)}
 
+  enum area: {
+    北海道エリア:0, 東北エリア:1, 関東エリア:2, 信越エリア:3, 北陸エリア:4, 東海エリア:5, 関西エリア:6
+  }
+
   validates :name, presence: true
 
   validates :prefecture, presence: true
@@ -20,4 +24,5 @@ class Skiresort < ApplicationRecord
       Skiresort.all
     end
   end
+
 end

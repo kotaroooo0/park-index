@@ -11,24 +11,15 @@ body {
     padding: 0;
     margin: 20px;
     a {
-      color: black;
+      color: inherit;
       text-decoration: none;
     }
   }
 }
 
 // parks index
-.parks-index {
-  li {
-    list-style: none;
-    float: left;
-    border: solid 1px #eee;
-    padding: 0;
-    margin: 20px;
-    a {
-      color: black
-    }
-  }
+.boarder-top {
+  border-top: 2px solid #eee;
 }
 
 // parks show
