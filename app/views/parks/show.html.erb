@@ -1,20 +1,39 @@
-<h1><%= @park.name %></h1>
-<div>
-  <%= image_tag 'sample_skiresort.jpg' , width: 300 %>
+<div class="row">
+  <div class="col-12">
+    <div class="card text-black mt-4 mb-4" style="background-color: #eee">
+      <div class="card-header">
+        <span class="card-text"><%= fa_icon "map-marker" %> <%= @park.skiresort.name %></span>
+        <h3 class="card-title"><%= @park.name %></h3>
+        <p class="card-text area-introduciton"><%= fa_icon "share-square" %> このパークはやばいパークということだ、、、。</p>
+      </div>
+      <div class="card-body bg-white">
+        <div class="row">
+          <div class="col-md-6 text-center">
+            <%= image_tag 'sample_skiresort.jpg', class: "w-100 rounded" %>
+          </div>
+          <div class="col-md-6">
+            <div class="card-text">
+              <%= fa_icon "fighter-jet" %> アイテム数: <%= @park.item %>
+            </div>
+            <div class="card-text">
+              <%= fa_icon "check-square-o" %> 対応レベル: <%= @park.level %>
+            </div>
+          </div>
+        </div>
+        <div class="comments mt-5">
+          <ul class="mt-2">
+            <% if @comments.blank? %>
+            <p class="card-text">まだ、このパークに対するコメントはありません。</p>
+            <% else %>
+            <h4 class="card-text">コメント</h4>
+            <%= render :partial => "comments/comment", :collection => @comments %>
+            <% end %>
+            <% if logged_in? %>
+            <%= render :partial => "comments/comment_form" %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div>
-  <%= fa_icon "fighter-jet" %> <%= @park.item %>
-</div>
-<div>
-  <%= fa_icon "check-square-o" %> <%= @park.level %>
-</div>
-
-<div class="comments">
-  <%=  "まだ、このパークに対するコメントはありません。" if @comments.blank? %>
-  <ul>
-    <%= render :partial => "comments/comment", :collection => @comments %>
-  </ul>
-</div>
-<% if logged_in? %>
-<%= render :partial => "comments/comment_form" %>
-<% end %>

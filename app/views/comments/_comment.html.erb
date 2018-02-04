@@ -1,13 +1,21 @@
-<li id="comment-<%= comment.id %>" class="list-inline">
-  <%= link_to (image_tag(comment.user.image, {alt: "profile_pic", size: 30, class: "rounded"})), comment.user %>
-  <div class="user"><%= link_to comment.user.name, comment.user %></div>
-  <div class="content">
-    <%= comment.body %>
+<li id="comment-<%= comment.id %>" class="list-inline m-2 p-2 bg-light">
+  <div class="row">
+    <div class="col-md-2 border-right border-secondary">
+      <%= link_to (image_tag(comment.user.image, {alt: "profile_pic", size: 50, class: "rounded"})), comment.user %>
+      <div class="user"><%= link_to comment.user.name, comment.user, class: "text-dark" %></div>
+    </div>
+    <div class="col-md-10">
+      <div class="content">
+        <p class="card-text"><%= comment.body %></p>
+      </div>
+      <div class="created">
+        <p class="card-text">
+          <%= fa_icon "edit" %> <%= comment.created_at.strftime("%Y-%m-%d") %>
+          <% if current_user?(comment.user) %>
+          <%= link_to (fa_icon "trash"), comment, method: :delete, data: { confirm: "本当に削除しますか?" }, class: "text-dark pl-1" %>
+          <% end %>
+        </p>
+      </div>
+    </div>
   </div>
-  <div class="created">
-    <%= comment.created_at.strftime("%Y-%m-%d") %>
-  </div>
-  <% if current_user?(comment.user) %>
-  <%= link_to "削除", comment, method: :delete, data: { confirm: "本当に削除しますか?" }, :class => "btn btn-default btn-sm" %>
-  <% end %>
 </li>

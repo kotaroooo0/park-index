@@ -5,12 +5,12 @@
   <%= f.hidden_field :user_id, :value => current_user.id %>
   <%= f.hidden_field :park_id, :value => @park.id %>
   <div class="body-form">
-    <%= f.label "コメント" %>
-    <%= f.text_area :body, class: 'form-control', required: true, placeholder: "レビューを入力してください。" %>
+    <%= f.label "コメントを投稿" %>
+    <%= f.text_area :body, class: 'form-control', required: true, placeholder: "レビューを255字以内で入力してください。", "maxlength" => 255  %>
   </div>
   <div class="submit-link">
-    <div class="text-center mt-3">
-      <%= f.submit "投稿", class: "btn btn-success" %>
+    <div class="text-center mt-1">
+      <%= f.submit "投稿する", class: "btn btn-outline-success btn-block" %>
     </div>
     <% end %>
   </div>
