@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @comments = @user.comments.order("id DESC").limit(6).includes(:user)
+    @comments = @user.comments.order("id DESC").includes(:user)
   end
 
   def edit
