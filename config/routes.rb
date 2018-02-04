@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
-  resources :skiresorts
+  resources :skiresorts, only: %i[index]
+  get '/skiresorts/search', to: 'skiresorts#search'
   resources :parks, only: %i[index show]
   resources :users
   resources :comments

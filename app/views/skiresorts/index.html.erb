@@ -1,14 +1,12 @@
-<div class="row">
-  <div class="col-md-12">
-    <div class="card text-black mt-4 mb-4" style="background-color: #eee">
-      <div class="card-header">
-        <h3 class="card-title"><%= fa_icon "compass" %> <%= @skiresorts.first.area %></h3>
-        <p class="card-text area-introduciton"><%= fa_icon "share-square" %> このエリアはとにかくすごい。ありえん多いスキー場。ありえんパウダースノー。ありえん多いエリアなどが含まれる。あああああああああああ、いきたい！</p>
-      </div>
-      <div class="card-body bg-white">
-        <div class="card-columns">
-          <%= render @skiresorts %>
-        </div>
+<div class="d-flex">
+  <div class="card text-black mt-4 mb-4" style="background-color: #eee">
+    <div class="card-header">
+      <h3 class="card-title"><%= fa_icon "compass" %> <%= @skiresorts.first.area %> <small>スキー場情報</small></h3>
+      <p class="card-text area-introduciton"><%= fa_icon "share-square" %> このエリアはとにかくすごい。ありえん多いスキー場。ありえんパウダースノー。ありえん多いエリアなどが含まれる。あああああああああああ、いきたい！</p>
+    </div>
+    <div class="card-body bg-white">
+      <div class="card-columns">
+        <%= render @skiresorts %>
       </div>
     </div>
   </div>
