@@ -9,7 +9,7 @@
         </div>
         <div class="col-md-9">
           <div class="name-form">
-            <%= f.label "名前" %>
+            <%= f.label "名前" %> <small class="bg-danger text-white p-1">必須</small>
             <%= f.text_field :name, class: 'form-control', required: true, placeholder: @user.name %>
           </div>
           <div class="gender-form mt-2">
@@ -18,23 +18,23 @@
             <label><%= f.radio_button :gender, "female" %> 女性</label>
             <!-- <%= f.select :gender, User.genders.keys.to_a, { include_blank: true }, class: "form-control", placeholder: @user.gender %> -->
           </div>
-          <div class="age-form">
+          <div class="age-form mt-2">
             <%= f.label "年齢" %>
             <%= f.text_field :age, class: 'form-control', placeholder: @user.age %>
           </div>
-          <div class="area-form">
+          <div class="area-form mt-2">
             <%= f.label "エリア"%>
             <%= f.select :area, User.areas.keys, {prompt: '選択してください'}, class: 'form-control' %>
           </div>
-          <div class="homegelaende-form">
+          <div class="homegelaende-form mt-2">
             <%= f.label "ホームゲレンデ" %>
             <%= f.text_field :home_gelaende, class: 'form-control', placeholder: @user.home_gelaende %>
           </div>
         </div>
       </div>
-      <div class="selfintroduction-form">
-        <%= f.label "自己紹介" %>
-        <%= f.text_area :self_introduction, class: 'form-control', placeholder: @user.self_introduction %>
+      <div class="selfintroduction-form mt-2">
+        <%= f.label "自己紹介 ※140字以内でご記入ください" %>
+        <%= f.text_area :self_introduction, class: 'form-control', "maxlength" => 140, placeholder: @user.self_introduction %>
       </div>
       <div class="submit-link">
         <div class="text-center mt-3">
