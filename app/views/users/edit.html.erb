@@ -1,39 +1,47 @@
-<div class="mt-3">
+<div class="mt-5">
   <div class="row">
-    <%= form_for(@user, url: user_path) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-    <%= image_tag(@user.image, {alt: "profile_image", size: 100, class: "rounded"}) %>
-    <div class="area-form">
-      <%= f.label "エリア" %>
-      <%= f.select :area, User.areas.keys, {prompt: '選択してください'}, class: 'form-control' %>
-    </div>
-    <div class="homegelaende-form">
-      <%= f.label "ホームゲレンデ" %>
-      <%= f.text_field :home_gelaende, class: 'form-control', placeholder: @user.home_gelaende %>
-    </div>
-    <div class="name-form">
-      <%= f.label "名前" %>
-      <%= f.text_field :name, class: 'form-control', required: true, placeholder: @user.name %>
-    </div>
-    <div class="gender-form">
-      <%= f.label "性別" %>
-      <label><%= f.radio_button :gender, "male" %> 男性</label>
-      <label><%= f.radio_button :gender, "female" %> 女性</label>
-      <!-- <%= f.select :gender, User.genders.keys.to_a, { include_blank: true }, class: "form-control", placeholder: @user.gender %> -->
-    </div>
-    <div class="age-form">
-      <%= f.label "年齢" %>
-      <%= f.text_field :age, class: 'form-control', placeholder: @user.age %>
-    </div>
-    <div class="selfintroduction-form">
-      <%= f.label "自己紹介" %>
-      <%= f.text_area :self_introduction, class: 'form-control', placeholder: @user.self_introduction %>
-    </div>
-    <div class="submit-link">
-      <div class="text-center mt-3">
-        <%= f.submit "変更を保存", class: "btn btn-success" %>
+    <div class="col-md-6 offset-md-3 bg-light p-5">
+      <%= form_for(@user, url: user_path) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div class="row">
+        <div class="col-md-3">
+          <%= image_tag(@user.image, {alt: "profile_image", class: "w-100 rounded"}) %>
+        </div>
+        <div class="col-md-9">
+          <div class="name-form">
+            <%= f.label "名前" %>
+            <%= f.text_field :name, class: 'form-control', required: true, placeholder: @user.name %>
+          </div>
+          <div class="gender-form mt-2">
+            <%= f.label "性別" %>
+            <label><%= f.radio_button :gender, "male" %> 男性</label>
+            <label><%= f.radio_button :gender, "female" %> 女性</label>
+            <!-- <%= f.select :gender, User.genders.keys.to_a, { include_blank: true }, class: "form-control", placeholder: @user.gender %> -->
+          </div>
+          <div class="age-form">
+            <%= f.label "年齢" %>
+            <%= f.text_field :age, class: 'form-control', placeholder: @user.age %>
+          </div>
+          <div class="area-form">
+            <%= f.label "エリア"%>
+            <%= f.select :area, User.areas.keys, {prompt: '選択してください'}, class: 'form-control' %>
+          </div>
+          <div class="homegelaende-form">
+            <%= f.label "ホームゲレンデ" %>
+            <%= f.text_field :home_gelaende, class: 'form-control', placeholder: @user.home_gelaende %>
+          </div>
+        </div>
       </div>
-      <% end %>
+      <div class="selfintroduction-form">
+        <%= f.label "自己紹介" %>
+        <%= f.text_area :self_introduction, class: 'form-control', placeholder: @user.self_introduction %>
+      </div>
+      <div class="submit-link">
+        <div class="text-center mt-3">
+          <%= f.submit "変更を保存", class: "btn btn-success btn-block" %>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
