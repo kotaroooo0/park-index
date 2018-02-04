@@ -16,13 +16,14 @@ class Skiresort < ApplicationRecord
 
   validates :park_count, presence: true
 
-  # ヘッダーからスキー場検索で用いる
-  def self.search(query)
-    if query
-      Skiresort.where(['name LIKE ?', "%#{query}%"])
-    else
-      Skiresort.all
-    end
+  # スクレイピングにより"Surf and snow"から積雪量とゲレンデ状況を得るインスタンスメソッド
+  def getGelaendeCondition
+    return "?" if !self.sas_code
+    agent = Mechanize.new
+    page = agent.get("https://snow.gnavi.co.jp/guide/htm/r#{self.sas_code}s.htm")
+    elements = page.search('td em')
+    gelaendeCondition = {"snowfall" => elements[0].inner_text, "range" =>elements[2].inner_text}
+    gelaendeCondition
   end
 
 end

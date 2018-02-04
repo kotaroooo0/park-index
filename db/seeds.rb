@@ -6,7 +6,7 @@ Skiresort.create!(name: 'アルツ磐梯', prefecture: '福島', area: 1)
 
 Skiresort.create!(name: '丸沼高原', prefecture: '群馬', area: 2)
 
-Skiresort.create!(name: '白馬47', prefecture: '長野', area: 3)
+Skiresort.create!(name: '白馬47', prefecture: '長野', area: 3, sas_code: "0061")
 Skiresort.create!(name: '白馬五竜', prefecture: '長野', area: 3)
 Skiresort.create!(name: '白馬岩岳', prefecture: '長野', area: 3)
 Skiresort.create!(name: '栂池高原', prefecture: '長野', area: 3)

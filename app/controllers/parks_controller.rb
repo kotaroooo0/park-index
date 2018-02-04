@@ -2,6 +2,7 @@ class ParksController < ApplicationController
 
   def index
     @skiresort_have_parks = Skiresort.where(area: params[:area]).have_parks.includes(:parks)
+    @area = Skiresort.getArea(params[:area])
   end
 
   def show
