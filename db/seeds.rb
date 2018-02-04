@@ -1,31 +1,46 @@
-Skiresort.create!(name: '札幌国際', prefecture: '北海道', area: 0)
-Skiresort.create!(name: 'ルスツリゾート', prefecture: '北海道', area: 0)
+areas = (1..7)
 
-Skiresort.create!(name: '夏油高原', prefecture: '岩手', area: 1)
-Skiresort.create!(name: 'アルツ磐梯', prefecture: '福島', area: 1)
+agent = Mechanize.new
+areas.each do |area|
+  page = agent.get("https://snow.gnavi.co.jp/search/list/spl_area01.php?areacdl=#{area}")
+  names_urls = page.search('.list_result h2 a')
+  prefectures = page.search('.list_result h2 small')
+  (0..19).each do |i|
+    name = names_urls[i].inner_text
+    sas_url = names_urls[i].attribute('href')
+    prefecture = prefectures[i].inner_text.tr("[ ", "").tr(" ]","")
+    Skiresort.create!(name: name, prefecture: prefecture, area: area, sas_url: sas_url)
+  end
+end
 
-Skiresort.create!(name: '丸沼高原', prefecture: '群馬', area: 2)
-
-Skiresort.create!(name: '白馬47', prefecture: '長野', area: 3, sas_code: "0061")
-Skiresort.create!(name: '白馬五竜', prefecture: '長野', area: 3)
-Skiresort.create!(name: '白馬岩岳', prefecture: '長野', area: 3)
-Skiresort.create!(name: '栂池高原', prefecture: '長野', area: 3)
-Skiresort.create!(name: 'X-JAM高井富士', prefecture: '長野', area: 3)
-Skiresort.create!(name: '竜王スキーパーク', prefecture: '長野', area: 3)
-Skiresort.create!(name: '妙高杉ノ原', prefecture: '新潟', area: 3)
-Skiresort.create!(name: '池の平温泉', prefecture: '新潟', area: 3)
-Skiresort.create!(name: '赤倉観光', prefecture: '新潟', area: 3)
-
-Skiresort.create!(name: 'スキージャム勝山', prefecture: '福井', area: 4)
-Skiresort.create!(name: '福井和泉', prefecture: '福井', area: 4)
-Skiresort.create!(name: '今庄365', prefecture: '福井', area: 4)
-
-Skiresort.create!(name: '鷲ヶ岳', prefecture: '岐阜', area: 5)
-Skiresort.create!(name: '高鷲スノーパーク', prefecture: '岐阜', area: 5)
-Skiresort.create!(name: 'ダイナランド', prefecture: '岐阜', area: 5)
-Skiresort.create!(name: 'めいほう', prefecture: '岐阜', area: 5)
-
-Skiresort.create!(name: '琵琶湖バレイ', prefecture: '滋賀', area: 6)
+# Skiresort.create!(name: '札幌国際', prefecture: '北海道', area: 0)
+# Skiresort.create!(name: 'ルスツリゾート', prefecture: '北海道', area: 0)
+#
+# Skiresort.create!(name: '夏油高原', prefecture: '岩手', area: 1)
+# Skiresort.create!(name: 'アルツ磐梯', prefecture: '福島', area: 1)
+#
+# Skiresort.create!(name: '丸沼高原', prefecture: '群馬', area: 2)
+#
+# Skiresort.create!(name: 'HAKUBA47', prefecture: '長野', area: 3, sas_code: "0061")
+# Skiresort.create!(name: '白馬五竜', prefecture: '長野', area: 3)
+# Skiresort.create!(name: '白馬岩岳', prefecture: '長野', area: 3)
+# Skiresort.create!(name: '栂池高原', prefecture: '長野', area: 3)
+# Skiresort.create!(name: 'X-JAM高井富士', prefecture: '長野', area: 3)
+# Skiresort.create!(name: '竜王スキーパーク', prefecture: '長野', area: 3)
+# Skiresort.create!(name: '妙高杉ノ原', prefecture: '新潟', area: 3)
+# Skiresort.create!(name: '池の平温泉', prefecture: '新潟', area: 3)
+# Skiresort.create!(name: '赤倉観光', prefecture: '新潟', area: 3)
+#
+# Skiresort.create!(name: 'スキージャム勝山', prefecture: '福井', area: 4)
+# Skiresort.create!(name: '福井和泉', prefecture: '福井', area: 4)
+# Skiresort.create!(name: '今庄365', prefecture: '福井', area: 4)
+#
+# Skiresort.create!(name: '鷲ヶ岳', prefecture: '岐阜', area: 5)
+# Skiresort.create!(name: '高鷲スノーパーク', prefecture: '岐阜', area: 5)
+# Skiresort.create!(name: 'ダイナランド', prefecture: '岐阜', area: 5)
+# Skiresort.create!(name: 'めいほう', prefecture: '岐阜', area: 5)
+#
+# Skiresort.create!(name: '琵琶湖バレイ', prefecture: '滋賀', area: 6)
 
 Park.create!(name: '47parks', item: 20, level: '1~10', skiresort_id: 6, area: 3)
 Park.create!(name: 'いいもりパーク', item: 15, level: '2~5', skiresort_id: 7, area: 3)

@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20180204145256) do
     t.integer "park_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "sas_code"
+    t.string "sas_url"
   end
 
   create_table "users", force: :cascade do |t|

@@ -4,7 +4,7 @@ class Park < ApplicationRecord
   belongs_to :skiresort,counter_cache: :park_count
 
   enum area: {
-    北海道エリア:0, 東北エリア:1, 関東エリア:2, 信越エリア:3, 北陸エリア:4, 東海エリア:5, 関西エリア:6
+    北海道エリア: 1, 東北エリア: 2, 関東甲信越エリア: 3, 中京エリア: 4, 北陸エリア: 5, 関西エリア: 6, 中国四国九州エリア: 7
   }
 
   validates :name, presence: true

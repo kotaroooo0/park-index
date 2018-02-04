@@ -11,7 +11,7 @@ module SkiresortsHelper
 
   # エリアを得るメソッド
   def getArea(area_param)
-    areas = {0 => "北海道", 1 => "東北", 2 => "関東", 3 => "信越", 4 => "北陸", 5 => "東海", 6 => "関西"}
+    areas = {1 => "北海道", 2 => "東北", 3 => "関東甲信越", 4 => "中京", 5 => "北陸", 6 => "関西", 7 => "中国/四国/九州"}
     areas[area_param.to_i]
   end
 
