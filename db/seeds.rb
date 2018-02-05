@@ -1,6 +1,16 @@
 # スクレイピングを行うエージェント
 agent = Mechanize.new
 
+# エリアの情報をスクレイピングして取得
+areas = {0 => "未設定", 1 => "北海道", 2 => "東北", 3 => "関東甲信越", 4 => "中京", 5 => "北陸", 6 => "関西", 7 => "中国/四国/九州"}
+areas.each { |key, value|
+  id = key
+  name = value
+  page = agent.get("https://snow.gnavi.co.jp/search/list/spl_area01.php?areacdl=#{id}")
+  description = page.search('.title p')[1].inner_text
+  Area.create!(id: id, name: name, description: description)
+}
+
 # スキー場の情報をスクレイピングして取得
 areas = (1..7)
 areas.each do |area|
@@ -19,7 +29,7 @@ areas.each do |area|
     prefecture = prefectures[i].inner_text.tr("[ ", "").tr(" ]","")
     picture = pictures[i].attribute('src')
     description = descriptions[i].inner_text
-    Skiresort.create!(name: name, prefecture: prefecture, area: area, sas_url: sas_url, picture: picture, description: description)
+    Skiresort.create!(name: name, prefecture: prefecture, area_id: area, sas_url: sas_url, picture: picture, description: description)
   end
 end
 
@@ -33,29 +43,23 @@ Skiresort.all.each do |skiresort|
   names = page.search('span.alphabet')
   if names.present?
     names.each do |name|
-      skiresort.parks.build(name: name.inner_text, area: skiresort.area).save
+      skiresort.parks.build(name: name.inner_text, area_id: skiresort.area_id).save
     end
   end
 end
 
-# Park.create!(name: '47parks', item: 20, level: '1~10', skiresort_id: 6, area: 3)
-# Park.create!(name: 'いいもりパーク', item: 15, level: '2~5', skiresort_id: 7, area: 3)
-# Park.create!(name: 'TGpark', item: 15, level: '5~10', skiresort_id: 9, area: 3)
-# Park.create!(name: 'メインパーク', item: 10, level: '7~9', skiresort_id: 10, area:3)
-# Park.create!(name: '宮パー', item: 6, level: '5~7', skiresort_id: 10, area: 3)
-# Park.create!(name: 'チャレンジパーク', item: 10, level: '1~4', skiresort_id: 10, area: 3)
-# Park.create!(name: 'The active', item: 40, level: '1~10', skiresort_id: 19, area: 5)
+# ユーザー
+User.create!(name: 'Teruchika Matsubayashi', age: 21, gender: 0, area_id: 1, image: "card_1.jpg")
+User.create!(name: 'Kento Okui', age: 22, gender: 0, area_id: 2, image: "card_2.jpg")
+User.create!(name: 'Shogo Uenishi', age: 23, gender: 1, area_id: 3, image: "card_3.jpg")
+User.create!(name: 'Yuta Okuno', age: 24, gender: 1, area_id: 4, image: "card_4.jpg")
 
-User.create!(name: 'Teruchika Matsubayashi', age: 21, gender: 0, area: 1, image: "https://avatars0.githubusercontent.com/u/31947384?s=400&v=4")
-User.create!(name: 'Kento Okui', age: 22, gender: 0, area: 2, image: "https://avatars0.githubusercontent.com/u/31947384?s=400&v=4")
-User.create!(name: 'Shogo Uenishi', age: 23, gender: 1, area: 3, image: "https://avatars0.githubusercontent.com/u/31947384?s=400&v=4")
-User.create!(name: 'Yuta Okuno', age: 24, gender: 1, area: 4, image: "https://avatars0.githubusercontent.com/u/31947384?s=400&v=4")
-
-# parks_index = [1, 2, 3, 4]
-# users_index = [1, 2, 3, 4]
-# body = "このパークはとてもhogeでとてもhugaだった。最高にバイブスが上がるキッカーがあった。レールもしっかり整備されていて綺麗なリップだった。とても満足したのでまた訪れたい。"
-# parks_index.each do |p_i|
-#   users_index.each do |u_i|
-#     Comment.create!(park_id: p_i, user_id: u_i, body: body)
-#   end
-# end
+# コメント
+parks_index = [1, 2, 3, 4]
+users_index = [1, 2, 3, 4]
+body = "このパークはまじでやっばーーーーーーーーーい。最高にバイブスが上がるキッカーがあった。レールもしっかり整備されていて綺麗なリップだった。とても満足したのでまた訪れたい。"
+parks_index.each do |p_i|
+  users_index.each do |u_i|
+    Comment.create!(park_id: p_i, user_id: u_i, body: body)
+  end
+end

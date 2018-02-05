@@ -24,7 +24,7 @@
           </div>
           <div class="area-form mt-2">
             <%= f.label "エリア"%>
-            <%= f.select :area, User.areas.keys, {prompt: '選択してください'}, class: 'form-control' %>
+            <%= f.select :area_id, Area.names, {prompt: '選択してください'}, class: 'form-control' %>
           </div>
           <div class="homegelaende-form mt-2">
             <%= f.label "ホームゲレンデ" %>

@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180204145256) do
+ActiveRecord::Schema.define(version: 20180205080622) do
+
+  create_table "areas", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
@@ -30,14 +37,14 @@ ActiveRecord::Schema.define(version: 20180204145256) do
     t.integer "comment_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "area"
+    t.integer "area_id"
     t.string "picture"
   end
 
   create_table "skiresorts", force: :cascade do |t|
     t.string "name"
     t.string "prefecture"
-    t.integer "area"
+    t.integer "area_id"
     t.integer "park_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -50,7 +57,7 @@ ActiveRecord::Schema.define(version: 20180204145256) do
     t.string "name"
     t.integer "age"
     t.integer "gender"
-    t.integer "area"
+    t.integer "area_id"
     t.string "image"
     t.integer "comment_count", default: 0
     t.string "provider"

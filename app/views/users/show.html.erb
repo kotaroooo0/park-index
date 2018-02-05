@@ -19,8 +19,8 @@
     </div>
     <div class="area">
       <span><%= fa_icon "angle-double-right" %> 住んでいるエリア: </span>
-      <% if @user.area.present? %>
-      <%= @user.area %>
+      <% if @user.area.name.present? %>
+      <%= @user.area.name %>
       <% else %>
       <small>(エリアは未設定です)</small>
       <% end %>

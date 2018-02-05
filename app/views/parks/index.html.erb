@@ -1,8 +1,8 @@
 <div class="d-flex">
   <div class="card text-black mt-4 mb-4 bg-gray">
     <div class="card-header">
-      <h3 class="card-title"><%= fa_icon "compass" %> <%= @area %> <small>パーク情報</small></h3>
-      <p class="card-text area-introduciton"><%= fa_icon "share-square" %> このエリアはとにかくすごい。ありえん多いパーク。ありえん多いアイテム数。ありえんでかいキッカーがアる。あーい！</p>
+      <h3 class="card-title"><%= fa_icon "compass" %> <%= @area.name %> <small>パーク情報</small></h3>
+      <p class="card-text area-introduciton"><%= fa_icon "share-square" %> <%= @area.description %></p>
     </div>
     <div class="card-body bg-white">
       <ul class="list-unstyled">

@@ -1,16 +1,8 @@
-<div class="row">
-  <div class="col-md-12">
-    <% @elems.each do |e| %>
-    <%= e.inner_text %> <br>
-    <% end %>
-    <%# "https://snow.gnavi.co.jp/guide/htm/r0023s.htm".gsub(/s.htm/, "gp.htm") %>
-  </div>
-</div>
 <div class="d-flex">
   <div class="card text-black mt-4 mb-4 bg-gray">
     <div class="card-header">
-      <h3 class="card-title"><%= fa_icon "compass" %> <%= @area %> <%= @area_key %> <small>スキー場情報</small></h3>
-      <p class="card-text area-introduciton"><%= fa_icon "share-square" %> このエリアはとにかくすごい。ありえん多いスキー場。ありえんパウダースノー。ありえん多いエリアなどが含まれる。あああああああああああ、いきたい！</p>
+      <h3 class="card-title"><%= fa_icon "compass" %> <%= @area.name %> <small>スキー場情報</small></h3>
+      <p class="card-text area-introduciton"><%= fa_icon "share-square" %> <%= @area.description %></p>
     </div>
     <div class="card-body bg-white">
       <div class="card-columns">
