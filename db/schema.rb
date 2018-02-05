@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20180204145256) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "area"
+    t.string "picture"
   end
 
   create_table "skiresorts", force: :cascade do |t|
@@ -41,6 +42,8 @@ ActiveRecord::Schema.define(version: 20180204145256) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "sas_url"
+    t.string "picture"
+    t.text "description"
   end
 
   create_table "users", force: :cascade do |t|

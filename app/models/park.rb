@@ -11,9 +11,9 @@ class Park < ApplicationRecord
 
   validates :area, presence: true
 
-  validates :item, presence: true
-
-  validates :level, presence: true
+  # validates :item, presence: true
+  #
+  # validates :level, presence: true
 
   validates :skiresort_id, presence: true
 

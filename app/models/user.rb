@@ -9,10 +9,9 @@ class User < ApplicationRecord
   enum gender: { male: 0, female: 1 }
 
   enum area: {
-    北海道:0,東北:1,関東:2,中部:3,東海:4,関西:5,
-    中国:6,四国:7,九州:8,沖縄:9
+    北海道エリア: 1, 東北エリア: 2, 関東甲信越エリア: 3, 中京エリア: 4, 北陸エリア: 5, 関西エリア: 6, 中国四国九州エリア: 7
   }
-
+  
   def self.create_with_facebook(auth)
     create! do |user|
       user.provider = auth["provider"]

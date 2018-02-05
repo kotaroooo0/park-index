@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark mb-3" style="background-color: #4BBD00;">
+<nav class="navbar navbar-expand-lg navbar-dark mb-3 bg-info">
   <%= link_to (fa_icon "product-hunt", class: "fa-lg") + "ARKINDEX", root_path, class: "navbar-brand" %>
   <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
     <span class="navbar-toggler-icon"></span>
@@ -30,13 +30,13 @@
           パーク
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to "北海道エリア", parks_path(area: 0), class: "dropdown-item" %>
-          <%= link_to "東北エリア", parks_path(area: 1), class: "dropdown-item" %>
-          <%= link_to "関東エリア", parks_path(area: 2), class: "dropdown-item" %>
-          <%= link_to "信越エリア", parks_path(area: 3), class: "dropdown-item" %>
-          <%= link_to "北陸エリア", parks_path(area: 4), class: "dropdown-item" %>
-          <%= link_to "東海エリア", parks_path(area: 5), class: "dropdown-item" %>
+          <%= link_to "北海道エリア", parks_path(area: 1), class: "dropdown-item" %>
+          <%= link_to "東北エリア", parks_path(area: 2), class: "dropdown-item" %>
+          <%= link_to "関東甲信越エリア", parks_path(area: 3), class: "dropdown-item" %>
+          <%= link_to "中京エリア", parks_path(area: 4), class: "dropdown-item" %>
+          <%= link_to "北陸エリア", parks_path(area: 5), class: "dropdown-item" %>
           <%= link_to "関西エリア", parks_path(area: 6), class: "dropdown-item" %>
+          <%= link_to "中国四国九州エリア", parks_path(area: 7), class: "dropdown-item" %>
         </div>
       </li>
 
