@@ -4,7 +4,7 @@
     <span class="card-text"><%= fa_icon "map-marker" %> <%= skiresort.prefecture %></span><h4 class="card-title"><%= skiresort.name %></h4>
     <p class="card-text"><%= skiresort.description %></p>
     <% gelaendeCondition = skiresort.getGelaendeCondition  %>
-    <p><%== fa_icon "angle-double-right lg" %> 積雪: <%= gelaendeCondition["snowfall"] %>cm</p>
+    <p><%== fa_icon "angle-double-right lg" %> 積雪: <%= gelaendeCondition["snowfall"] %></p>
     <p><%= fa_icon "angle-double-right lg" %> ゲレンデ状況: <%= gelaendeCondition["range"] %></p>
   </div>
   <div class="card-footer bg-white">

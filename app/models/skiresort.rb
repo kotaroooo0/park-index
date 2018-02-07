@@ -18,9 +18,11 @@ class Skiresort < ApplicationRecord
     agent = Mechanize.new
     page = agent.get(self.sas_url)
     elements = page.search('td.bottom em')
-    return {"snowfall" => "不明", "range" => "不明"} if elements.blank?
-    gelaendeCondition = {"snowfall" => elements[0].inner_text, "range" =>elements[2].inner_text}
-    gelaendeCondition
+    snowfall = "不明"
+    range = "不明"
+    snowfall = elements[0].inner_text if elements[0].present?
+    range = elements[2].inner_text if elements[2].present?
+    return {"snowfall" => snowfall + "cm", "range" => range}
   end
 
 end

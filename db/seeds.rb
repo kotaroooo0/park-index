@@ -2,7 +2,8 @@
 agent = Mechanize.new
 
 # エリアの情報をスクレイピングして取得
-areas = {0 => "未設定", 1 => "北海道", 2 => "東北", 3 => "関東甲信越", 4 => "中京", 5 => "北陸", 6 => "関西", 7 => "中国/四国/九州"}
+Area.create!(id: 0, name: "未設定", description: "未設定")
+areas = {1 => "北海道", 2 => "東北", 3 => "関東甲信越", 4 => "中京", 5 => "北陸", 6 => "関西", 7 => "中国/四国/九州"}
 areas.each { |key, value|
   id = key
   name = value
@@ -41,9 +42,10 @@ Skiresort.all.each do |skiresort|
     next
   end
   names = page.search('span.alphabet')
+  descriptions = page.search('.right p')
   if names.present?
-    names.each do |name|
-      skiresort.parks.build(name: name.inner_text, area_id: skiresort.area_id).save
+    names.length.times do |i|
+      skiresort.parks.build(name: names[i].inner_text, area_id: skiresort.area_id, description: descriptions[i].inner_text).save
     end
   end
 end

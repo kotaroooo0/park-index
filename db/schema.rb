@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20180205080622) do
     t.datetime "updated_at", null: false
     t.integer "area_id"
     t.string "picture"
+    t.text "description"
   end
 
   create_table "skiresorts", force: :cascade do |t|

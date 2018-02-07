@@ -1,11 +1,8 @@
 <div class="row">
-
   <div class="col-sm-2">
     <%= image_tag(@user.image, {alt: "profile_pic", class: "w-100 rounded"}) %>
   </div>
-
   <div class="col-sm-10">
-
     <div class="primary-info">
       <span class="name-label"><%= @user.name %></span>
       <span class="age pl-3">
@@ -25,7 +22,6 @@
       <small>(エリアは未設定です)</small>
       <% end %>
     </div>
-
     <div class="homegelaende">
       <span><%= fa_icon "angle-double-right" %> ホームゲレンデ: </span>
       <% if @user.home_gelaende.present? %>
@@ -34,9 +30,7 @@
       <small>(ホームゲレンデは未設定です)</small>
       <% end %>
     </div>
-
   </div>
-
   <div class="col-md-12 mt-3">
     <div class="selfintroduction">
       <div class="card w-100">
@@ -53,10 +47,7 @@
       </div>
     </div>
   </div>
-
-
-
-  <div class="com-md-12">
+  <div class="col-md-12">
     <div class="comments mt-3">
       <ul class="mt-2">
         <% if @comments.blank? %>
