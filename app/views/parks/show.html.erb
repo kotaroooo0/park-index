@@ -12,11 +12,12 @@
             <%= image_tag 'sample_skiresort.jpg', class: "w-100 rounded" %>
           </div>
           <div class="col-md-6">
-            <div class="card-text">
-              <%= fa_icon "fighter-jet" %> アイテム数: <%= @park.item %>
-            </div>
-            <div class="card-text">
-              <%= fa_icon "check-square-o" %> 対応レベル: <%= @park.level %>
+            <div class="layouts">
+              <h5><%= fa_icon "file" %>  パークレイアウト</h5>
+              <% if @lanes.present? %>
+              <%= render :partial => "lanes/lane", :collection => @lanes %>
+              <% end %>
+              <%= render :partial => "lanes/lane_form", locals: {park: @park} %>  
             </div>
           </div>
         </div>
@@ -25,7 +26,7 @@
             <% if @comments.blank? %>
             <p class="card-text">まだ、このパークに対するコメントはありません。</p>
             <% else %>
-            <h4 class="card-text">コメント</h4>
+            <h5 class="card-text"><%= fa_icon "comment" %> コメント 全<%= @comments.count %>件</h5>
             <%= render :partial => "comments/comment", :collection => @comments %>
             <% end %>
             <% if logged_in? %>

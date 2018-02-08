@@ -10,7 +10,7 @@
       </div>
       <div class="created">
         <p class="card-text">
-          <%= fa_icon "edit" %> <%= comment.created_at.strftime("%Y-%m-%d") %>
+          <%= fa_icon "calendar" %> <%= comment.created_at.strftime("%Y-%m-%d") %>
           <% if current_user?(comment.user) %>
           <%= link_to (fa_icon "trash"), comment, method: :delete, data: { confirm: "本当に削除しますか?" }, class: "text-dark pl-1" %>
           <% end %>

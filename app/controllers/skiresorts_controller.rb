@@ -1,7 +1,7 @@
 class SkiresortsController < ApplicationController
 
   def index
-    @skiresorts = Skiresort.where(area_id: params[:area_id]).page(params[:page]).per(9).includes(:parks)
+    @skiresorts = Area.find(params[:area_id]).skiresorts.page(params[:page]).per(9).includes(:parks)
     @area = Area.find(params[:area_id])
   end
 
