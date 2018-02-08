@@ -8,10 +8,10 @@
       </div>
       <div class="card-body bg-white">
         <div class="row">
-          <div class="col-md-6 text-center">
-            <%= image_tag 'sample_skiresort.jpg', class: "w-100 rounded" %>
+          <div class="col-md-5 text-center">
+            <%= image_tag "https://snow.gnavi.co.jp/" + @park.picture, class: "w-100 rounded" %>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-7">
             <div class="layouts">
               <h5><%= fa_icon "file" %>  パークレイアウト</h5>
               <% if @lanes.present? %>

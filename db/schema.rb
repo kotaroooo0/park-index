@@ -39,8 +39,6 @@ ActiveRecord::Schema.define(version: 20180207172154) do
 
   create_table "parks", force: :cascade do |t|
     t.string "name"
-    t.integer "item"
-    t.string "level"
     t.integer "skiresort_id"
     t.integer "comment_count", default: 0
     t.datetime "created_at", null: false

@@ -43,9 +43,17 @@ Skiresort.all.each do |skiresort|
   end
   names = page.search('span.alphabet')
   descriptions = page.search('.right p')
+  pictures = page.search('li.PhotoBox img')
   if names.present?
     names.length.times do |i|
-      skiresort.parks.build(name: names[i].inner_text, area_id: skiresort.area_id, description: descriptions[i].inner_text).save
+      name = names[i].inner_text
+      description = descriptions[i].inner_text
+      if pictures[i].present?
+        picture = pictures[i].attribute('src')
+      else
+        picture = "noimage.jpg"
+      end
+      skiresort.parks.build(name: name, area_id: skiresort.area_id, description: description, picture: picture).save
     end
   end
 end
