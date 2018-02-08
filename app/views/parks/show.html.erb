@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-12">
-    <div class="card text-black mt-4 mb-4" style="background-color: #eee">
+    <div class="card text-black mt-2 mb-2" style="background-color: #eee">
       <div class="card-header">
         <span class="card-text"><%= fa_icon "map-marker" %> <%= @park.skiresort.name %></span>
         <h3 class="card-title"><%= @park.name %></h3>
@@ -17,7 +17,7 @@
               <% if @lanes.present? %>
               <%= render :partial => "lanes/lane", :collection => @lanes %>
               <% end %>
-              <%= render :partial => "lanes/lane_form", locals: {park: @park} %>  
+              <%= render :partial => "lanes/lane_form", locals: {park: @park} %>
             </div>
           </div>
         </div>

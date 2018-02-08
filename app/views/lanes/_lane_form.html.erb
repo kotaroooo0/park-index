@@ -1,7 +1,7 @@
-<button type="button" class="btn btn-outline-info btn-block" data-toggle="modal" data-target="#myModal">
+<button type="button" class="btn btn-outline-info btn-block" data-toggle="modal" data-target="#createModal">
   レーンを追加する
 </button>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -13,7 +13,7 @@
       <div class="modal-body">
         <div class="lane-form">
           <% @lane ||= Lane.new %>
-          <%= form_for(@lane) do |f| %>
+          <%= form_for @lane do |f| %>
           <%= hidden_field_tag :park_id, park.id %>
           <%= render 'shared/error_messages', object: f.object %>
           <div class="items-form">

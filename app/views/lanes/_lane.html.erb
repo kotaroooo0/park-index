@@ -1,11 +1,11 @@
 <div class="each-lane">
   <div class="name"><%= lane.name %></div>
   <div class="items"><%= lane.items %></div>
-  <a href="#" class="text-dark" data-toggle="modal" data-target="#myModal"><%= fa_icon "edit" %></a>
+  <a href="#" class="text-dark" data-toggle="modal" data-target="#modal-<%= lane.id %>"><%= fa_icon "edit" %></a>
   <%= link_to (fa_icon "trash"), lane, method: :delete, data: { confirm: "本当に削除しますか?" }, class: "text-dark pl-1" %>
 </div>
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="modal-<%= lane.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
