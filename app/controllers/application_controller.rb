@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
     redirect_to login_url
   end
 
+  def profile_image(img)
+    img.blank? ? "profile_pic.jpeg" : img
+  end
+
 end

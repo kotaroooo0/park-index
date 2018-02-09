@@ -4,12 +4,14 @@
       <%= form_for(@user, url: user_path) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <div class="row">
-        <div class="col-md-3">
-          <%# image_tag(@user.image, {alt: "profile_image", class: "w-100 rounded"}) %>
-          <%= image_tag @user.image_url(:thumb), {alt: "profile_image", class: "w-100 rounded"} %>
-          <%= f.file_field :image %>
+        <div class="col-md-4">
+          <div class="image-form">
+            <%= image_tag @user.profile_image, {alt: "profile_image", class: "w-100 rounded"} %>
+            <%= f.label :image, "画像を変更",class: "btn btn-light btn-sm btn-block" %>
+            <%= f.file_field :image, onchange: "previewFile()", hidden: true %>
+          </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-8">
           <div class="name-form">
             <%= f.label "名前" %> <span class="badge badge-danger">必須</span>
             <%= f.text_field :name, class: 'form-control', required: true, placeholder: @user.name %>

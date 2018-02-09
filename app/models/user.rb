@@ -16,9 +16,12 @@ class User < ApplicationRecord
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.name = auth["info"]["name"]
-      user.image = auth["info"]["image"] || "profile_pic.jpg"
       user.area_id = 0
     end
+  end
+
+  def profile_image
+    self.image.blank? ? "profile_pic.jpeg" : self.image
   end
 
 end

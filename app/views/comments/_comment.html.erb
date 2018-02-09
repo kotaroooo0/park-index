@@ -1,7 +1,7 @@
 <li id="comment-<%= comment.id %>" class="list-inline m-2 p-2 bg-light">
   <div class="row">
     <div class="col-md-2 border-right border-secondary">
-      <%= link_to (image_tag(comment.user.image, {alt: "profile_pic", size: 50, class: "rounded"})), comment.user %>
+      <%= link_to (image_tag(comment.user.profile_image, {alt: "profile_pic", height: 60, class: "rounded"})), comment.user %>
       <div class="user"><%= link_to comment.user.name, comment.user, class: "text-dark" %></div>
     </div>
     <div class="col-md-10">
