@@ -2,6 +2,30 @@ body {
   font-family: arial, "游ゴシック", "arial unicode ms", arial, sans-serif;
 }
 
+// ホーム
+.top-page {
+  // border: 1px solid #eee;
+  box-shadow: 4px 4px 20px gray;
+  .image-area{
+    background-image: url("bg-pattern3.jpg");
+    #title {
+      padding-top: 3em;
+    }
+    #subtitle {
+      font-size: 1.2em;
+    }
+    #btn-signup {
+      margin-right: auto;
+      margin-left: auto;
+    }
+    #carouselIndicators {
+      margin: auto;
+    }
+  }
+}
+
+
+
 .bg-gray {
   background-color: #eee;
 }

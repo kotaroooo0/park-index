@@ -1,77 +1,77 @@
-<div class="row">
-
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <%= image_tag 'root_1.jpg' , class: "d-block w-100" %>
-        <!-- <div class="carousel-caption d-none d-md-block">
-          <span class="carousel-caption-logo"><%= fa_icon "product-hunt", class: "fa-lg"%>ARKINDEX</span>
-        </div> -->
+<div class="row mt-5">
+  <div class="top-page m-5">
+    <div class="image-area">
+      <h1 id="title" class="text-white text-center">超シンプルなスノーパーク情報サービス</h1>
+      <p id="subtitle" class="text-white text-center">PARKINDEXは掲示板型のシンプルなスノーパーク情報共有サービスです</p>
+      <div class="text-center my-5">
+        <%= link_to "無料でサインアップ", login_path, class: "btn btn-info rounded-0 my-5"%>
       </div>
-      <div class="carousel-item">
-        <%= image_tag 'root_2.jpg' , class: "d-block w-100" %>
-        <!-- <div class="carousel-caption d-none d-md-block">
-          <span class="carousel-caption-logo"><%= fa_icon "product-hunt", class: "fa-lg"%>ARKINDEX</span>
-        </div> -->
-      </div>
-      <div class="carousel-item">
-        <%= image_tag 'root_3.jpg' , class: "d-block w-100" %>
-        <!-- <div class="carousel-caption d-none d-md-block">
-          <span class="carousel-caption-logo"><%= fa_icon "product-hunt", class: "fa-lg"%>ARKINDEX</span>
-        </div> -->
+      <div id="carouselIndicators" class="carousel slide my-5 w-50" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <%= image_tag 'root_1.jpg' , class: "d-block w-100" %>
+          </div>
+          <div class="carousel-item">
+            <%= image_tag 'root_2.jpg' , class: "d-block w-100" %>
+          </div>
+          <div class="carousel-item">
+            <%= image_tag 'root_3.jpg' , class: "d-block w-100" %>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+          <
+        </a>
+        <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+          >
+        </a>
       </div>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      >
-    </a>
+    <div class="content-area">
+      <h2 class="text-center my-5"><strong>機能</strong></h2>
+      <div class="row m-3">
+        <div class="col-sm-6 col-md-3 mt-1">
+          <div class="card">
+            <%= image_tag 'card_1.jpg' , class: "card-img-top" %>
+            <div class="card-body px-2 py-3">
+              <h5 class="card-title">スキー場</h5>
+              <p class="card-text">スキー場の詳しい情報を知ることができる</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 mt-1">
+          <div class="card">
+            <%= image_tag 'card_2.jpg' , class: "card-img-top" %>
+            <div class="card-body px-2 py-3">
+              <h5 class="card-title">パーク</h5>
+              <p class="card-text">最近のレイアウトなどパーク情報を得ることができる</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 mt-1">
+          <div class="card">
+            <%= image_tag 'card_3.jpg' , class: "card-img-top" %>
+            <div class="card-body px-2 py-3">
+              <h5 class="card-title">レビュー</h5>
+              <p class="card-text">パークについてレビューを見たり、書いたりできる</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 mt-1">
+          <div class="card">
+            <%= image_tag 'card_4.jpg' , class: "card-img-top" %>
+            <div class="card-body px-2 py-3">
+              <h5 class="card-title">いいね</h5>
+              <p class="card-text">レビューに対して、いいねなどを送ることができる</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="row mt-4">
-    <div class="col-12 mb-2">
-      <h3>なにができる?</h3>
-    </div>
-    <div class="col-sm-6 col-md-4 mt-1">
-      <div class="card">
-        <%= image_tag 'card_1.jpg' , class: "card-img-top" %>
-        <div class="card-body px-2 py-3">
-          <h5 class="card-title">スキー場</h5>
-          <p class="card-text">スキー場の詳しい情報を知ることができる</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4 mt-1">
-      <div class="card">
-        <%= image_tag 'card_2.jpg' , class: "card-img-top" %>
-        <div class="card-body px-2 py-3">
-          <h5 class="card-title">パーク</h5>
-          <p class="card-text">最近のレイアウトなどパーク情報を得ることができる</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4 mt-1">
-      <div class="card">
-        <%= image_tag 'card_3.jpg' , class: "card-img-top" %>
-        <div class="card-body px-2 py-3">
-          <h5 class="card-title">レビュー</h5>
-          <p class="card-text">パークについてレビューを見たり、書いたりできる</p>
-        </div>
-      </div>
-    </div><div class="col-sm-6 col-md-4 mt-1">
-      <div class="card">
-        <%= image_tag 'card_4.jpg' , class: "card-img-top" %>
-        <div class="card-body px-2 py-3">
-          <h5 class="card-title">いいね</h5>
-          <p class="card-text">レビューに対して、いいねなどを送ることができる</p>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
