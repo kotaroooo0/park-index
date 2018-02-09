@@ -28,9 +28,6 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-instagram'
 
-# for edit
-gem 'bootstrap-form'
-
 # for scraping
 gem 'mechanize'
 

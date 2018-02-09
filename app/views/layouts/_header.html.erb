@@ -58,9 +58,13 @@
       </li>
       <% end %>
     </ul>
-    <%= form_tag skiresorts_search_path, method: :get, class: "form-inline my-2 my-lg-0" do %>
-    <%= text_field_tag(:search, params[:search], placeholder: "スキー場を入力", class: "form-control mr-sm-2") %>
-    <%= submit_tag "検索", class: "btn btn-outline-light my-2 my-sm-0" %>
-    <% end %>
+    <%= form_tag skiresorts_search_path, method: :get, class: "form-inline" do %>
+    <div class="input-group">
+      <%= text_field_tag(:search, params[:search], placeholder: "スキー場を入力", class: "form-control", "aria-describedby" => "addon") %>
+      <div class="input-group-append">
+        <%= submit_tag "検索", id: "addon", class: "btn btn-outline-info bg-light" %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </nav>

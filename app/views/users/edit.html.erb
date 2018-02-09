@@ -9,13 +9,12 @@
         </div>
         <div class="col-md-9">
           <div class="name-form">
-            <%= f.label "名前" %> <small class="bg-danger text-white p-1">必須</small>
+            <%= f.label "名前" %> <span class="badge badge-danger">必須</span>
             <%= f.text_field :name, class: 'form-control', required: true, placeholder: @user.name %>
           </div>
-          <div class="gender-form mt-2">
-            <%= f.label "性別" %>
-            <label><%= f.radio_button :gender, "male" %> 男性</label>
-            <label><%= f.radio_button :gender, "female" %> 女性</label>
+          <div class="gender-form mt-3 btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-sm btn-outline-info"><%= f.radio_button :gender, "male" %> <%= fa_icon "male" %></label>
+            <label class="btn btn-sm btn-outline-info"><%= f.radio_button :gender, "female" %> <%= fa_icon "female" %></label>
           </div>
           <div class="age-form mt-2">
             <%= f.label "年齢" %>

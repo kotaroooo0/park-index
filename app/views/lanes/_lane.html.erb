@@ -4,7 +4,6 @@
   <a href="#" class="text-dark" data-toggle="modal" data-target="#modal-<%= lane.id %>"><%= fa_icon "edit" %></a>
   <%= link_to (fa_icon "trash"), lane, method: :delete, data: { confirm: "本当に削除しますか?" }, class: "text-dark pl-1" %>
 </div>
-
 <div class="modal fade" id="modal-<%= lane.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -15,19 +14,17 @@
         </button>
       </div>
       <div class="modal-body">
-        <div class="modal-body">
-          <div class="lane-form">
-            <%= form_for lane, :url => lane_path do |f| %>
-            <%= hidden_field_tag :lane_id, lane.id %>
-            <%= render 'shared/error_messages', object: f.object %>
-            <div class="items-form">
-              <%= f.label "名前を変更" %>
-              <%= f.text_field :name, class: 'form-control', required: true, placeholder: lane.name %>
-            </div>
-            <div class="items-form mt-2">
-              <%= f.label "レイアウトを変更" %>
-              <%= f.text_area :items, class: 'form-control', required: true, placeholder: lane.items %>
-            </div>
+        <div class="lane-form">
+          <%= form_for lane, :url => lane_path do |f| %>
+          <%= hidden_field_tag :lane_id, lane.id %>
+          <%= render 'shared/error_messages', object: f.object %>
+          <div class="items-form">
+            <%= f.label "名前を変更" %>
+            <%= f.text_field :name, class: 'form-control', required: true, placeholder: lane.name %>
+          </div>
+          <div class="items-form mt-2">
+            <%= f.label "レイアウトを変更" %>
+            <%= f.text_area :items, class: 'form-control', required: true, placeholder: lane.items %>
           </div>
         </div>
         <div class="modal-footer">

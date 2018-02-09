@@ -6,7 +6,7 @@ class SkiresortsController < ApplicationController
   end
 
   def search
-    @skiresorts = searchSkiresorts(params[:search]).includes(:parks)
+    @skiresorts = searchSkiresorts(params[:search]).page(params[:page]).per(9).includes(:parks)
   end
 
   def show

@@ -9,7 +9,7 @@ Overview
 
 ## バージョン
 Ruby 2.4.3  
-Rails 5.1.2
+Rails 5.1.2  
 Bootstrap 4.0.0
 
 ## 開発環境
