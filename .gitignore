@@ -31,3 +31,6 @@ config/environments/*.local.yml
 
 # Ignore Spring files.
 /spring/*.pid
+
+# Ignore upload image
+/public/uploads
