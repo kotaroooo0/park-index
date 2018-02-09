@@ -3,6 +3,8 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   belongs_to :area
 
+  mount_uploader :image, ImageUploader
+
   validates :name, presence: true, length: { maximum: 30 }
 
   validates :self_introduction, length: { maximum: 140 }
