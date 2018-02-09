@@ -5,8 +5,8 @@
       <%= render 'shared/error_messages', object: f.object %>
       <div class="row">
         <div class="col-md-3">
-          <%= image_tag(@user.image, {alt: "profile_image", class: "w-100 rounded"}) %>
-          <!-- <%= image_tag @user.image_url(:thumb), {alt: "profile_image", class: "w-100 rounded"} %> -->
+          <%# image_tag(@user.image, {alt: "profile_image", class: "w-100 rounded"}) %>
+          <%= image_tag @user.image_url(:thumb), {alt: "profile_image", class: "w-100 rounded"} %>
           <%= f.file_field :image %>
         </div>
         <div class="col-md-9">
