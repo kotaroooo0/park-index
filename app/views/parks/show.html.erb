@@ -17,7 +17,9 @@
               <% if @lanes.present? %>
               <%= render :partial => "lanes/lane", :collection => @lanes %>
               <% end %>
+              <% if logged_in? %>
               <%= render :partial => "lanes/lane_form", locals: {park: @park} %>
+              <% end %>
             </div>
           </div>
         </div>

@@ -2,9 +2,20 @@ body {
   font-family: arial, "游ゴシック", "arial unicode ms", arial, sans-serif;
 }
 
+.bg-gray {
+  background-color: #eee;
+}
+
+.border-top-gray {
+  border-top: solid 1px #eee;
+}
+
+ul {
+  padding-left: 0;
+}
+
 // ホーム
 .top-page {
-  // border: 1px solid #eee;
   box-shadow: 4px 4px 20px gray;
   .image-area{
     background-image: url("bg-pattern3.jpg");
@@ -24,21 +35,22 @@ body {
   }
 }
 
-
-
-.bg-gray {
-  background-color: #eee;
+// park_index
+.park-index {
+  .each-skiresort {
+    float: left;
+    box-shadow: 1px 1px 8px gray;
+  }
 }
 
-.border-top-gray {
-  border-top: solid 1px #eee;
+// park_show
+.each-lane{
+  .name{
+    font-size: 1.1em;
+  }
 }
 
-ul {
-  padding-left: 0;
-}
-
-// member show
+// member_show
 .name-label {
   font-size: 2em;
 }

@@ -1,4 +1,5 @@
-<li class="d-block mt-2">
-  <span class="card-text"><%= fa_icon "map-marker" %> <%= skiresort_have_parks.prefecture %></span><h4 class="card-title"><%= skiresort_have_parks.name %></h4>
+<li class="each-skiresort p-3 m-2 border">
+  <span class="card-text"><%= fa_icon "map-marker" %> <%= skiresort_have_parks.prefecture %></span>
+  <h5 class="card-title"><%= skiresort_have_parks.name %></h5>
   <%= render :partial => "parks/park_for_skiresorts_index", :collection => skiresort_have_parks.parks %>
 </li>

@@ -1,5 +1,5 @@
-<div class="each-lane">
-  <div class="name"><%= lane.name %></div>
+<div class="each-lane bg-light p-3 mb-2">
+  <div class="name border-bottom mb-1"><%= lane.name %></div>
   <div class="items"><%= lane.items %></div>
   <a href="#" class="text-dark" data-toggle="modal" data-target="#modal-<%= lane.id %>"><%= fa_icon "edit" %></a>
   <%= link_to (fa_icon "trash"), lane, method: :delete, data: { confirm: "本当に削除しますか?" }, class: "text-dark pl-1" %>
