@@ -8,13 +8,12 @@
       <div class="content">
         <p class="card-text"><%= comment.body %></p>
       </div>
-      <div class="created">
-        <p class="card-text">
-          <%= fa_icon "calendar" %> <%= comment.created_at.strftime("%Y-%m-%d") %>
-          <% if current_user?(comment.user) %>
-          <%= link_to (fa_icon "trash"), comment, method: :delete, data: { confirm: "本当に削除しますか?" }, class: "text-dark pl-1" %>
-          <% end %>
-        </p>
+      <div class="option">
+        <%= render :partial => "likes/like", locals: {comment: comment} %>
+        <%= fa_icon "calendar" %> <%= comment.created_at.strftime("%Y-%m-%d") %>
+        <% if current_user?(comment.user) %>
+        <%= link_to (fa_icon "trash"), comment, method: :delete, data: { confirm: "本当に削除しますか?" }, class: "text-dark pl-1" %>
+        <% end %>
       </div>
     </div>
   </div>

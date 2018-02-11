@@ -1,0 +1,9 @@
+<% if current_user.nil? %>
+<%= fa_icon "thumbs-up" %>
+<% else %>
+<% if comment.like_user?(current_user.id) %>
+<%= link_to comment.like_count, comment_like_path(user_id: current_user.id, comment_id: comment.id), method: :delete, :class => "btn btn-light btn-sm", id: "like-button", remote: true %>
+<% else %>
+<%= link_to comment.like_count, comment_likes_path(comment, user_id: current_user.id), method: :post, :class => "btn btn-light btn-sm", :id => "like-button", :remote => true %>
+<% end %>
+<% end %>
