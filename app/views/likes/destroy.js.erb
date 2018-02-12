@@ -1,1 +1,1 @@
-$("#comment-<%= comment.id %> .like-btn").html("<%= j(render :partial => "likes/like", locals: {comment: comment}) %>");
+$("#comment-<%= @comment.id %> .like-btn").html("<%= j(render :partial => 'likes/like', locals: {comment: @comment, likes: @likes}) %>");

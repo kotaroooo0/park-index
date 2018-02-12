@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :comments, only: %i[create destroy] do
     resources :likes, only: %i[create destroy]
   end
-  
+
   get '/skiresorts/search', to: 'skiresorts#search'
   get 'auth/:provider/callback', to: 'sessions#callback'
   get '/logout', to: 'sessions#destroy'

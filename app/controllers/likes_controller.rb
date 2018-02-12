@@ -1,25 +1,21 @@
 class LikesController < ApplicationController
 
   def create
-    Like.new(like_params).save
+    Like.create(user_id: current_user.id, comment_id: params[:comment_id])
+    @likes = Like.where(comment_id: params[:comment_id])
+    @comment = Comment.find(params[:comment_id])
     respond_to do |format|
-      format.html
       format.js
     end
   end
 
   def destroy
-    Like.find_by(like_params).destroy
+    Like.find_by(comment_id: params[:comment_id], user_id: current_user.id).destroy
+    @likes = Like.where(comment_id: params[:comment_id])
+    @comment = Comment.find(params[:comment_id])
     respond_to do |format|
-      format.html
       format.js
     end
-  end
-
-  private
-
-  def like_params
-    params.permit(:user_id, :comment_id)
   end
 
 end

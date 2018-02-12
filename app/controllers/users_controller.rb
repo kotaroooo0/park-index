@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @comments = @user.comments.order("id DESC").includes(:user)
+    @likes = Like.where(comment_id: params[:comment_id])
   end
 
   def edit

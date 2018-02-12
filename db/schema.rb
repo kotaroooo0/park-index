@@ -43,8 +43,6 @@ ActiveRecord::Schema.define(version: 20180211031123) do
     t.integer "comment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["comment_id"], name: "index_likes_on_comment_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "parks", force: :cascade do |t|

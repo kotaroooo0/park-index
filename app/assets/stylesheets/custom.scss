@@ -2,16 +2,16 @@ body {
   font-family: arial, "游ゴシック", "arial unicode ms", arial, sans-serif;
 }
 
+ul {
+  padding-left: 0;
+}
+
 .bg-gray {
   background-color: #eee;
 }
 
 .border-top-gray {
   border-top: solid 1px #eee;
-}
-
-ul {
-  padding-left: 0;
 }
 
 // ホーム

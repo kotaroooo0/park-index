@@ -9,6 +9,7 @@ class ParksController < ApplicationController
     @park = Park.find(params[:id])
     @comments = @park.comments.order("id DESC").limit(6).includes(:user)
     @lanes = @park.lanes
+    @likes = Like.where(comment_id: params[:comment_id])
   end
 
 end
