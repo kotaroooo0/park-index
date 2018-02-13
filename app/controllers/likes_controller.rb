@@ -1,5 +1,7 @@
 class LikesController < ApplicationController
 
+  before_action :logged_in_user?, only:[:create, :destroy]
+
   def create
     Like.create(user_id: current_user.id, comment_id: params[:comment_id])
     @likes = Like.where(comment_id: params[:comment_id])

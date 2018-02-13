@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :name
       t.integer :age
       t.integer :gender
-      t.integer :area_id
+      t.references :area, foreign_key: true
       t.string :image
       t.integer :comment_count, default: 0
       t.string :provider

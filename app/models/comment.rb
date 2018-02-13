@@ -7,7 +7,7 @@ class Comment < ApplicationRecord
 
   # いいねしているユーザーかどうか
   def like_user?(user_id)
-    !likes.find_by(user_id: user_id).nil?
+    !likes.find_by(user_id: user_id).blank?
   end
 
 end

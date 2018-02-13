@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def profile_image(img)
-    img.blank? ? "profile_pic.jpeg" : img
+    img || "profile_pic.jpeg"
   end
 
 end

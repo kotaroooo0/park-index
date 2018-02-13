@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20180211031123) do
     t.integer "park_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["park_id"], name: "index_lanes_on_park_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -43,17 +44,21 @@ ActiveRecord::Schema.define(version: 20180211031123) do
     t.integer "comment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_likes_on_comment_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "parks", force: :cascade do |t|
     t.string "name"
-    t.integer "skiresort_id"
     t.integer "comment_count", default: 0
+    t.integer "area_id"
+    t.integer "skiresort_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "area_id"
     t.string "picture"
     t.text "description"
+    t.index ["area_id"], name: "index_parks_on_area_id"
+    t.index ["skiresort_id"], name: "index_parks_on_skiresort_id"
   end
 
   create_table "skiresorts", force: :cascade do |t|
@@ -66,6 +71,7 @@ ActiveRecord::Schema.define(version: 20180211031123) do
     t.string "sas_url"
     t.string "picture"
     t.text "description"
+    t.index ["area_id"], name: "index_skiresorts_on_area_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -81,6 +87,7 @@ ActiveRecord::Schema.define(version: 20180211031123) do
     t.datetime "updated_at", null: false
     t.text "self_introduction"
     t.string "home_gelaende"
+    t.index ["area_id"], name: "index_users_on_area_id"
   end
 
 end
