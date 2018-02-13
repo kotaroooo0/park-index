@@ -6,12 +6,20 @@ ul {
   padding-left: 0;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 .bg-gray {
   background-color: #eee;
 }
 
 .border-top-gray {
   border-top: solid 1px #eee;
+}
+
+.fa-small {
+  font-size: 0.8em !important;
 }
 
 // ホーム
@@ -33,7 +41,13 @@ ul {
       margin: auto;
     }
   }
+  .browse-bar {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px; 
+  }
 }
+
+
 
 // park_index
 .park-index {
