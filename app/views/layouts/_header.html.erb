@@ -39,6 +39,9 @@
           <%= link_to "中国四国九州エリア", parks_path(area_id: 7), class: "dropdown-item" %>
         </div>
       </li>
+      <li class="nav-item <%= 'active' if (controller.controller_name + controller.action_name) == 'inquiriesnew' %>">
+        <%= link_to "お問い合わせ", new_inquiry_path, class: "nav-link" %>
+      </li>
 
       <% if logged_in? %>
       <li class="nav-item dropdown <%= 'active' if controller.controller_name == 'users' %>">

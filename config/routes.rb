@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :parks, only: %i[index show]
   resources :users, only: %i[show edit update]
   resources :lanes, only: %i[create update destroy]
+  resources :inquiries, only: %i[new create]
   resources :comments, only: %i[create destroy] do
     resources :likes, only: %i[create destroy]
   end
