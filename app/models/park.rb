@@ -7,10 +7,8 @@ class Park < ApplicationRecord
 
   validates :name, presence: true
 
-  validates :area, presence: true
+  validates :area_id, presence: true
 
   validates :skiresort_id, presence: true
-
-  validates :comment_count, presence: true
 
 end

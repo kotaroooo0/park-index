@@ -1,6 +1,7 @@
 valid_park:
   name: "47parks"
-  item: 20
-  level: "1-10"
+  area_id: 1
   skiresort_id: 1
   comment_count: 1
+  picture: "sample.png"
+  description: "良い"

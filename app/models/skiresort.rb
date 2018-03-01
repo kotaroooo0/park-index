@@ -9,9 +9,7 @@ class Skiresort < ApplicationRecord
 
   validates :prefecture, presence: true
 
-  validates :area, presence: true
-
-  validates :park_count, presence: true
+  validates :area_id, presence: true
 
   # スクレイピングにより"Surf and snow"から積雪量とゲレンデ状況を得るインスタンスメソッド
   def getGelaendeCondition

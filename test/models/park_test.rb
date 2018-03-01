@@ -2,37 +2,25 @@ require 'test_helper'
 
 class ParkTest < ActiveSupport::TestCase
 
-  def setup
-    @park = parks(:valid_park)
-  end
-
+  # def setup
+  #   valid_park = Park.new(name: "47parks", area_id: 1, skiresort_id: 1)
+  # end
+  #
   # test "should be valid" do
-  #   assert @park.valid?
+  #   valid_park = Park.new(name: "47parks", area_id: 1, skiresort_id: 1)
+  #   assert valid_park.valid?
   # end
   #
   # test "name should be presence" do
-  #   @park.name = ""
-  #   assert_not @park.valid?
-  # end
-  #
-  # test "item should be presence" do
-  #   @park.item = ""
-  #   assert_not @park.valid?
-  # end
-  #
-  # test "level should be presence" do
-  #   @park.level = ""
-  #   assert_not @park.valid?
+  #   valid_park = Park.new(name: "47parks", area_id: 1, skiresort_id: 1)
+  #   valid_park.name = ""
+  #   assert_not valid_park.valid?
   # end
   #
   # test "skiresort_id should be presence" do
-  #   @park.skiresort_id = ""
-  #   assert_not @park.valid?
-  # end
-  #
-  # test "comment_count should be presence" do
-  #   @park.comment_count = ""
-  #   assert_not @park.valid?
+  #   valid_park = Park.new(name: "47parks", area_id: 1, skiresort_id: 1)
+  #   valid_park.skiresort_id = ""
+  #   assert_not valid_park.valid?
   # end
 
 end
