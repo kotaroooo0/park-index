@@ -17,6 +17,7 @@ module ParkIndex
 
     config.time_zone = 'Asia/Tokyo'
     config.i18n.default_locale = :ja
+    config.assets.initialize_on_precompile = false
 
   end
 end
