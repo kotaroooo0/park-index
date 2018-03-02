@@ -39,7 +39,12 @@ gem 'kaminari-bootstrap'
 gem 'carrierwave'
 gem 'rmagick', require: 'RMagick'
 
+group :production do
+  gem 'pg', '0.20.0'
+end
+
 group :development, :test do
+  gem 'sqlite3'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
