@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build(comment_params)
     if @comment.save
-      flash[:success] = "コメントを投稿しました。"
+      flash[:info] = "コメントを投稿しました。"
       redirect_to request.referrer || root_url
     else
       flash[:danger] = "コメントの投稿に失敗しました。"
@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
 
   def destroy
     Comment.find(params[:id]).destroy
-    flash[:success] = "コメントを削除しました。"
+    flash[:info] = "コメントを削除しました。"
     redirect_to request.referrer || root_url
   end
 
