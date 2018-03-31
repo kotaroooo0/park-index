@@ -2,9 +2,10 @@
 
 ## 概要
 PARKINDEXはフリースタイラーのためのシンプルなスノーパーク情報共有サービスです
+https://lit-lowlands-79330.herokuapp.com/
 
 ## スクリーンショット
-以下スクリーンショットでは開発環境としてスクレイピングした情報を用いている
+以下スクリーンショットでは開発環境でスクレイピングした情報を用いている
 <img src="https://user-images.githubusercontent.com/31947384/36148183-641fb668-10fe-11e8-94a1-00d0faea47a2.png" width="70%">    
 
 <img src="https://user-images.githubusercontent.com/31947384/36148238-962c0b84-10fe-11e8-979a-a12dfc3afc22.png" width="70%">   
