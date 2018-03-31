@@ -1,7 +1,7 @@
 # PARKINDEX
 
 ## 概要
-PARKINDEXはフリースタイラーのためのシンプルなスノーパーク情報共有サービスです
+PARKINDEXはフリースタイラーのためのシンプルなスノーパーク情報共有サービスです   
 https://lit-lowlands-79330.herokuapp.com/
 
 ## スクリーンショット
