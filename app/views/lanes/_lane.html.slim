@@ -1,10 +1,7 @@
 .each-lane.bg-light.p-3.mb-2
-  .name.border-bottom.mb-1
-    = lane.name
-  .items
-    = lane.items
-  a.text-dark data-target=("#modal-<%= lane.id %>") data-toggle="modal" href="#"
-    = fa_icon "edit"
+  .name.border-bottom.mb-1 = lane.name
+  .items = lane.items
+  a.text-dark data-target=("#modal-<%= lane.id %>") data-toggle="modal" href="#" = fa_icon "edit"
   = link_to (fa_icon "trash"), lane, method: :delete, data: { confirm: "本当に削除しますか?" }, class: "text-dark pl-1"
 .modal.fade aria-labelledby="myModalLabel" id=("modal-<%= lane.id %>") role="dialog" tabindex="-1"
   .modal-dialog role="document"

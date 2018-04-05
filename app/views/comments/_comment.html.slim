@@ -6,7 +6,8 @@ li.list-inline.m-2.p-2.bg-light id=("comment-#{comment.id}")
         = link_to comment.user.name, comment.user, class: "text-dark"
     .col-md-10
       .content
-        p.card-text = comment.body
+        p.card-text
+          = comment.body
       .option
         span.like-btn.mr-1
           = render :partial => "likes/like", locals: {comment: comment, likes: @likes}

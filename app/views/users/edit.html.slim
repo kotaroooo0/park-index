@@ -12,8 +12,7 @@
           .col-md-8
             .name-form
               = f.label "名前"
-              span.badge.badge-danger
-                | 必須
+              span.badge.badge-danger 必須
               = f.text_field :name, class: 'form-control', required: true, placeholder: @user.name
             .gender-form.mt-3.btn-group.btn-group-toggle data-toggle="buttons"
               label.btn.btn-sm.btn-outline-info.rounded-0

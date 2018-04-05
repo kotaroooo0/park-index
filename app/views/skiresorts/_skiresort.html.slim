@@ -18,9 +18,7 @@
       | ゲレンデ状況:
       = gelaendeCondition["range"]
   .card-footer.bg-white
-    h5.card-text
-      | パーク
+    h5.card-text パーク
     - if skiresort.parks.blank?
-      span.card-text.btn.btn-block.btn-light
-        | なし
-    = render :partial => "parks/park_for_skiresorts_index", :collection => skiresort.parks
+      span.card-text.btn.btn-block.btn-light なし
+    = render :partial => "parks/park", :collection => skiresort.parks

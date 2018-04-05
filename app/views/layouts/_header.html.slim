@@ -7,27 +7,17 @@ nav.navbar.navbar-expand-lg.navbar-dark.mb-3.bg-info
       li class=("nav-item #{'active' if (controller.controller_name + controller.action_name) == 'static_pageshome'}")
         = link_to "ホーム", root_path, class: "nav-link"
       li class=("nav-item dropdown #{'active' if (controller.controller_name + controller.action_name) == 'skiresortsindex'}")
-        a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
-          | スキー場
+        a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" スキー場
         .dropdown-menu aria-labelledby="navbarDropdown"
-          = link_to "北海道エリア", skiresorts_path(area_id: 1), class: "dropdown-item"
-          = link_to "東北エリア", skiresorts_path(area_id: 2), class: "dropdown-item"
-          = link_to "関東甲信越エリア", skiresorts_path(area_id: 3), class: "dropdown-item"
-          = link_to "中京エリア", skiresorts_path(area_id: 4), class: "dropdown-item"
-          = link_to "北陸エリア", skiresorts_path(area_id: 5), class: "dropdown-item"
-          = link_to "関西エリア", skiresorts_path(area_id: 6), class: "dropdown-item"
-          = link_to "中国四国九州エリア", skiresorts_path(area_id: 7), class: "dropdown-item"
+          - Area.all.each do |area|
+            - next if area.name == "未設定"
+            = link_to "#{area.name}エリア", skiresorts_path(area_id: area.id), class: "dropdown-item"
       li class=("nav-item dropdown #{'active' if (controller.controller_name + controller.action_name) == 'parksindex'}")
-        a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
-          | パーク
+        a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" パーク
         .dropdown-menu aria-labelledby="navbarDropdown"
-          = link_to "北海道エリア", parks_path(area_id: 1), class: "dropdown-item"
-          = link_to "東北エリア", parks_path(area_id: 2), class: "dropdown-item"
-          = link_to "関東甲信越エリア", parks_path(area_id: 3), class: "dropdown-item"
-          = link_to "中京エリア", parks_path(area_id: 4), class: "dropdown-item"
-          = link_to "北陸エリア", parks_path(area_id: 5), class: "dropdown-item"
-          = link_to "関西エリア", parks_path(area_id: 6), class: "dropdown-item"
-          = link_to "中国四国九州エリア", parks_path(area_id: 7), class: "dropdown-item"
+          - Area.all.each do |area|
+            - next if area.name == "未設定"
+            = link_to "#{area.name}エリア", parks_path(area_id: area.id), class: "dropdown-item"
       li class=("nav-item #{'active' if (controller.controller_name + controller.action_name) == 'inquiriesnew'}")
         = link_to "お問い合わせ", new_inquiry_path, class: "nav-link"
       - if logged_in?
