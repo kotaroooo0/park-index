@@ -2,7 +2,12 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::RMagick
 
-  storage :file
+  if Rails.env.production?
+    storage :fog
+  else
+    storage :file
+  end
+
   process convert: 'jpg'
 
   # 保存するディレクトリ名
@@ -19,7 +24,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   def extension_white_list
     %W[jpg jpeg gif png]
   end
-  
+
   # 変換したファイルのファイル名の規則
   def filename
     "#{Time.zone.now.strftime('%Y%m%d%H%M%S')}.jpg" if original_filename.present?
