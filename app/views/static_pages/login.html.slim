@@ -1,0 +1,14 @@
+.d-flex.flex-row.justify-content-center.mt-5
+  .bg-gray.p-5
+    .mb-4
+      = fa_icon "product-hunt", class: "fa-lg"
+      | ARKINDEX
+    = link_to '/auth/facebook', class: "btn btn-block btn-sm btn-social btn-facebook" do
+      span.fa.fa-facebook
+      | Facebookでログイン
+    = link_to '/auth/twitter', class: "btn btn-block btn-sm btn-social btn-twitter disabled" do
+      span.fa.fa-twitter
+      | Twitterでログイン
+    = link_to '/auth/instagram', class: "btn btn-block btn-sm btn-social btn-instagram disabled" do
+      span.fa.fa-instagram
+      | Instagramでログイン

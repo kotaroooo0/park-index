@@ -1,0 +1,29 @@
+.each-lane.bg-light.p-3.mb-2
+  .name.border-bottom.mb-1
+    = lane.name
+  .items
+    = lane.items
+  a.text-dark data-target=("#modal-<%= lane.id %>") data-toggle="modal" href="#"
+    = fa_icon "edit"
+  = link_to (fa_icon "trash"), lane, method: :delete, data: { confirm: "本当に削除しますか?" }, class: "text-dark pl-1"
+.modal.fade aria-labelledby="myModalLabel" id=("modal-<%= lane.id %>") role="dialog" tabindex="-1"
+  .modal-dialog role="document"
+    .modal-content
+      .modal-header
+        h5#exampleModalLabel.modal-title レーンを編集
+        button.close aria-label="閉じる" data-dismiss="modal" type="button"
+          span aria-hidden="true" &times;
+      .modal-body
+        .lane-form
+          = form_for lane, :url => lane_path do |f|
+            = hidden_field_tag :lane_id, lane.id
+            = render 'shared/error_messages', object: f.object
+            .items-form
+              = f.label "名前を変更"
+              = f.text_field :name, class: 'form-control', required: true, placeholder: lane.name
+            .items-form.mt-2
+              = f.label "レイアウトを変更"
+              = f.text_area :items, class: 'form-control', required: true, placeholder: lane.items
+            .modal-footer
+              = f.submit "更新する", class: "btn btn-info"
+              button.btn.btn-outline-info data-dismiss="modal" type="button"  閉じる

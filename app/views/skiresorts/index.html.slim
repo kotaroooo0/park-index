@@ -1,0 +1,14 @@
+.d-flex
+  .card.text-black.mt-4.mb-4.bg-gray
+    .card-header
+      h3.card-title
+        = fa_icon "compass"
+        = @area.name
+        small スキー場情報
+      p.card-text.area-introduciton
+        = fa_icon "share-square"
+        = @area.description
+    .card-body.bg-white
+      .card-columns
+        = render @skiresorts
+      = paginate @skiresorts

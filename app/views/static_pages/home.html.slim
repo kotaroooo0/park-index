@@ -1,0 +1,55 @@
+.row.mt-5
+  .top-page.m-5
+    .image-area
+      h1#title.text-white.text-center 超シンプルなスノーパーク情報サービス
+      p#subtitle.text-white.text-center PARKINDEXはフリースタイラーのためのシンプルなスノーパーク情報共有サービスです
+      .text-center.my-5
+        = link_to "無料でサインアップ", login_path, class: "btn btn-info rounded-0 my-5"
+      #carouselIndicators.carousel.slide.my-5.w-50 data-ride="carousel"
+        ul.browse-bar.bg-gray.mb-0
+          = fa_icon "circle", class: "ml-2 fa-small text-danger"
+          = fa_icon "circle", class: "ml-1 fa-small text-warning"
+          = fa_icon "circle", class: "ml-1 fa-small text-success"
+        ol.carousel-indicators
+          li.active data-slide-to="0" data-target="#carouselIndicators"
+          li data-slide-to="1" data-target="#carouselIndicators"
+          li data-slide-to="2" data-target="#carouselIndicators"
+        .carousel-inner
+          .carousel-item.active
+            = image_tag 'root_1.png' , class: "d-block w-100"
+          .carousel-item
+            = image_tag 'root_2.png' , class: "d-block w-100"
+          .carousel-item
+            = image_tag 'root_3.png' , class: "d-block w-100"
+        a.carousel-control-prev data-slide="prev" href="#carouselIndicators" role="button"
+
+        a.carousel-control-next data-slide="next" href="#carouselIndicators" role="button"
+
+    .content-area.text-secondary
+      h2.text-center.my-5
+        strong 機能
+      .row.m-3
+        .col-sm-6.col-lg-4.mt-1
+          .text-center = fa_icon "home", class: "fa-3x"
+          h5.text-center.mb-3 スキー場情報
+          p スキー場の最新情報を得ることができます
+        .col-sm-6.col-lg-4.mt-1.text-center
+          .text-center = fa_icon "exclamation-triangle", class: "fa-3x"
+          h5.text-center.mb-3 スノーパーク情報
+          p スノーパークの最新情報を得ることができます
+        .col-sm-6.col-lg-4.mt-1.text-center
+          .text-center = fa_icon "file", class: "fa-3x"
+          h5.text-center.mb-3 レイアウト情報
+          p 登録したユーザーはレイアウトを自由に追加、編集を行うことができます。
+        .col-sm-6.col-lg-4.mt-1.text-center
+          .text-center = fa_icon "comments", class: "fa-3x"
+          h5.text-center.mb-3 コメント機能
+          p パークに対するコメントをすることでより詳しい情報共有を行うことができます。
+        .col-sm-6.col-lg-4.mt-1.text-center
+          .text-center = fa_icon "thumbs-up", class: "fa-3x"
+          h5.text-center.mb-3 いいね機能
+          p 良いと思ったコメントにはいいね！をすることができます。
+        .col-sm-6.col-lg-4.mt-1.text-center
+          .text-center = fa_icon "at", class: "fa-3x"
+          h5.text-center.mb-3 お問い合わせ機能
+          p フィードバックや言いたいことなど作者に知らせることができます

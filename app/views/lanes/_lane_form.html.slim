@@ -1,0 +1,23 @@
+button.btn.btn-outline-info.btn-block.rounded-0 data-target="#createModal" data-toggle="modal" type="button" レーンを追加する
+#createModal.modal.fade aria-labelledby="myModalLabel" role="dialog" tabindex="-1"
+  .modal-dialog role="document"
+    .modal-content
+      .modal-header
+        h5#exampleModalLabel.modal-title レーンを追加
+        button.close aria-label="閉じる" data-dismiss="modal" type="button"
+          span aria-hidden="true" &times;
+      .modal-body
+        .lane-form
+          - @lane ||= Lane.new
+          = form_for @lane do |f|
+            = hidden_field_tag :park_id, park.id
+            = render 'shared/error_messages', object: f.object
+            .items-form
+              = f.label "名前を入力"
+              = f.text_field :name, class: 'form-control', required: true, placeholder: "例:上級レーン"
+            .items-form.mt-2
+              = f.label "レイアウトを紹介"
+              = f.text_area :items, class: 'form-control', required: true, placeholder: "レイアウトを入力"
+            .modal-footer
+              = f.submit "追加する", class: "btn btn-info"
+              button.btn.btn-outline-info data-dismiss="modal" type="button"  閉じる

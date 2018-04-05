@@ -1,0 +1,12 @@
+.comment-form
+  - @comment ||= Comment.new
+  = form_for(@comment) do |f|
+    = render 'shared/error_messages', object: f.object
+    = f.hidden_field :user_id, :value => current_user.id
+    = f.hidden_field :park_id, :value => @park.id
+    .body-form
+      = f.label "コメントを投稿"
+      = f.text_area :body, class: 'form-control', required: true, placeholder: "レビューを255字以内で入力してください。", "maxlength" => 255
+    .submit-link
+      .text-center.mt-1
+        = f.submit "投稿する", class: "btn btn-info btn-block rounded-0"

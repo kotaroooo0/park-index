@@ -1,0 +1,49 @@
+.row
+  .col-sm-2
+    = image_tag(@user.profile_image, {alt: "profile_pic", class: "w-100 rounded"})
+  .col-sm-10
+    .primary-info
+      span.name-label
+        = @user.name
+      span.age.pl-3
+        - if @user.gender.present?
+          = fa_icon @user.gender
+        - if @user.age.present?
+          = @user.age
+    .area
+      span
+        = fa_icon "angle-double-right"
+        | 住んでいるエリア:
+        - if @user.area.name.blank? || @user.area.name == "未設定"
+          small
+            | (エリアは未設定です)
+        - else
+          = @user.area.name
+    .homegelaende
+      span
+        = fa_icon "angle-double-right"
+        | ホームゲレンデ:
+        - if @user.home_gelaende.present?
+          = @user.home_gelaende
+        - else
+          small
+            | (ホームゲレンデは未設定です)
+  .col-md-12.mt-3
+    .selfintroduction
+      .card.w-100
+        .card-header
+          = fa_icon "info"
+        .card-body
+          - if @user.self_introduction.present?
+            = @user.self_introduction
+          - else
+            small
+              | (自己紹介は未設定です)
+  .col-md-12
+    .comments.mt-3
+      ul.mt-2
+        - if @comments.blank?
+          p.card-text このユーザーはまだコメントしていません
+        - else
+          h4.card-text 投稿したコメント(#{@comments.count})
+          = render :partial => "comments/comment", :collection => @comments

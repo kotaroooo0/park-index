@@ -1,0 +1,16 @@
+li.list-inline.m-2.p-2.bg-light id=("comment-#{comment.id}")
+  .row
+    .col-md-2.border-right.border-secondary
+      = link_to (image_tag(comment.user.profile_image, {alt: "profile_pic", height: 60, class: "rounded"})), comment.user
+      .user
+        = link_to comment.user.name, comment.user, class: "text-dark"
+    .col-md-10
+      .content
+        p.card-text = comment.body
+      .option
+        span.like-btn.mr-1
+          = render :partial => "likes/like", locals: {comment: comment, likes: @likes}
+        = fa_icon "calendar"
+        = comment.created_at.strftime("%Y-%m-%d")
+        - if current_user?(comment.user)
+          = link_to (fa_icon "trash"), comment, method: :delete, data: { confirm: "本当に削除しますか?" }, class: "text-dark pl-1"

@@ -1,0 +1,12 @@
+.d-flex
+  .card.text-black.mt-4.mb-4 style=("background-color: #eee")
+    .card-header
+      h3.card-title
+        = fa_icon "search"
+        | スキー場情報
+      p.card-text.area-introduciton
+        = fa_icon "share-square"
+        | 検索されたスキー場
+    .card-body.bg-white
+      .card-columns
+        = render @skiresorts

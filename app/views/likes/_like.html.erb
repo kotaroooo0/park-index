@@ -1,9 +1,0 @@
-<% if current_user.nil? %>
-<%= fa_icon "thumbs-up" %> <%= comment.like_count %>
-<% else %>
-<% if comment.like_user?(current_user.id) %>
-<%= link_to (fa_icon "thumbs-up", text: comment.like_count ), comment_like_path(likes, comment_id: comment.id), method: :delete, class: "text-primary", remote: true %>
-<% else %>
-<%= link_to (fa_icon "thumbs-up", text: comment.like_count ), comment_likes_path(comment), method: :post, class: "text-secondary", remote: true %>
-<% end %>
-<% end %>

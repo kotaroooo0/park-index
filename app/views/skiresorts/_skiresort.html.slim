@@ -1,0 +1,26 @@
+.card
+  = image_tag skiresort.picture, class: "card-img-top"
+  .card-body
+    span.card-text
+      = fa_icon "map-marker"
+      = skiresort.prefecture
+    h4.card-title
+      = skiresort.name
+    p.card-text
+      = skiresort.description
+    - gelaendeCondition = skiresort.getGelaendeCondition
+    p
+      = fa_icon "angle-double-right lg"
+      | 積雪:
+      = gelaendeCondition["snowfall"]
+    p
+      = fa_icon "angle-double-right lg"
+      | ゲレンデ状況:
+      = gelaendeCondition["range"]
+  .card-footer.bg-white
+    h5.card-text
+      | パーク
+    - if skiresort.parks.blank?
+      span.card-text.btn.btn-block.btn-light
+        | なし
+    = render :partial => "parks/park_for_skiresorts_index", :collection => skiresort.parks

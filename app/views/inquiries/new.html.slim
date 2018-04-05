@@ -1,0 +1,17 @@
+.mt-5
+  .row
+    .col-md-6.offset-md-3.bg-light.p-5
+      h5.mb-3 お問い合わせフォーム
+      = form_for(@inquiry) do |f|
+        = render "shared/error_messages", object: f.object
+        .field
+          = f.label "お名前"
+          span.badge.badge-danger 必須
+          = f.text_field :name, class: 'form-control mb-3'
+          = f.label "ご自身のメールアドレス"
+          span.badge.badge-danger 必須
+          = f.email_field :email, class: 'form-control mb-3'
+          = f.label "内容"
+          span.badge.badge-danger 必須
+          = f.text_area :content, class: 'form-control mb-3'
+        = f.submit "Send", class: "btn btn-info btn-block rounded-0 mt-2"

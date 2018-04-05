@@ -19,6 +19,7 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'bootstrap-social-rails'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
+gem 'slim-rails'
 
 # for login
 gem 'config'

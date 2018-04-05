@@ -1,0 +1,7 @@
+li.each-skiresort.p-3.m-2.border
+  span.card-text
+    = fa_icon "map-marker"
+    = skiresort_have_parks.prefecture
+  h5.card-title
+    = skiresort_have_parks.name
+  = render :partial => "parks/park", :collection => skiresort_have_parks.parks

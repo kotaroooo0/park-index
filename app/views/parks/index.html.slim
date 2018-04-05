@@ -1,0 +1,14 @@
+.park-index
+  .d-flex
+    .card.text-black.mt-4.mb-4.bg-gray
+      .card-header
+        h3.card-title
+          = fa_icon "compass"
+          = @area.name
+          small パーク情報
+        p.card-text.area-introduciton
+          = fa_icon "share-square"
+          = @area.description
+      .card-body.bg-white
+        ul.list-unstyled
+          = render :partial => "parks/skiresort_have_parks", :collection => @skiresort_have_parks

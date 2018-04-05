@@ -1,0 +1,6 @@
+- if page.current?
+  li.page-item.active
+    = content_tag :a, page, remote: remote, rel: (page.next? ? 'next' : (page.prev? ? 'prev' : nil)), class: 'page-link', style: "background-color: #1598AF;border: solid 1px #1598AF"
+- else
+  li.page-item
+    = link_to page, url, remote: remote, rel: (page.next? ? 'next' : (page.prev? ? 'prev' : nil)), class: 'page-link', style: "color: #1598AF"

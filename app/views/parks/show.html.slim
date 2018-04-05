@@ -1,0 +1,36 @@
+.row
+  .col-12
+    .card.text-black.mt-2.mb-2 style=("background-color: #eee")
+      .card-header
+        span.card-text
+          = fa_icon "map-marker"
+          = @park.skiresort.name
+        h3.card-title
+          = @park.name
+        p.card-text.area-introduciton
+          = fa_icon "share-square"
+          = @park.description
+      .card-body.bg-white
+        .row
+          .col-md-5.text-center
+            = image_tag "https://snow.gnavi.co.jp/" + @park.picture, class: "w-100 rounded"
+          .col-md-7
+            .layouts
+              h5
+                = fa_icon "file"
+                | パークレイアウト
+              - if @lanes.present?
+                = render :partial => "lanes/lane", :collection => @lanes
+              - if logged_in?
+                = render :partial => "lanes/lane_form", locals: {park: @park}
+        .comments.mt-5
+          ul.mt-2
+            - if @comments.blank?
+              p.card-text まだ、このパークに対するコメントはありません。
+            - else
+              h5.card-text
+                = fa_icon "comment"
+                | コメント 全#{@comments.count}件
+              = render :partial => "comments/comment", :collection => @comments
+            - if logged_in?
+              = render :partial => "comments/comment_form"
