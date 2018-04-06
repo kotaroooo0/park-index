@@ -9,9 +9,4 @@ class SkiresortsController < ApplicationController
     @skiresorts = searchSkiresorts(params[:search]).page(params[:page]).per(9).includes(:parks)
   end
 
-  def show
-    @skiresort = Skiresort.find(params[:id])
-    @parks = @skiresort.parks
-  end
-
 end
