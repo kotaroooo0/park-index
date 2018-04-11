@@ -16,4 +16,7 @@
 //= require jquery_ujs
 //= require popper
 //= require bootstrap
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .

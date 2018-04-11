@@ -20,6 +20,8 @@ gem 'bootstrap-social-rails'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'slim-rails'
+gem 'react-rails'
+gem 'execjs'
 
 # for login
 gem 'config'
