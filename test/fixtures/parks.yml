@@ -1,7 +1,0 @@
-valid_park:
-  name: "47parks"
-  area_id: 1
-  skiresort_id: 1
-  comment_count: 1
-  picture: "sample.png"
-  description: "良い"

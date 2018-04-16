@@ -2,11 +2,29 @@ require "rails_helper"
 
 describe SessionsController do
 
+  # def facebook_login_setup
+  #   OmniAuth.config.test_mode = true
+  #   OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new(
+  #     {
+  #       :provider => 'facebook',
+  #       :uid => '123545',
+  #       'info' => {
+  #         :name => 'mockuser'
+  #       }
+  #     }
+  #   )
+  # end
+  #
+  # def facebook_login_failure
+  #   OmniAuth.config.mock_auth[:facebook] = :invalid_credentials
+  # end
+
   render_views
 
   describe "GET #callback" do
 
     before do
+      # get :callback
     end
 
 
@@ -26,35 +44,22 @@ describe SessionsController do
   describe "GET #destroy" do
 
     before do
+      # Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:facebook]
+      # OmniAuth.config.mock_auth[:facebook] = nil
+      # Rails.application.env_config['omniauth.auth'] = facebook_login_setup
+      # get :callback
+      # get :destroy
     end
 
     it "レスポンスが200であること" do
       # expect(response.status).to eq 200
     end
 
-    it "@userに対応したユーザーを割り当てる" do
+    it "セッションが削除される" do
     end
 
-    it "editテンプレートがrenderされる" do
+    it "rootにリダイレクトされる" do
       # expect(response).to render_template :edit
-    end
-
-  end
-
-  describe "PATCH #update" do
-
-    before do
-    end
-
-    it "レスポンスが302であること" do
-      # expect(response.status).to eq 200
-    end
-
-    it "データベースのユーザーが更新されること" do
-    end
-
-    it "users#showにリダイレクトされること" do
-      # expect(response).to redirect_to user_path(assigns(:user))
     end
 
   end
