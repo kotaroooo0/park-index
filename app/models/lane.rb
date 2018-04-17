@@ -8,16 +8,16 @@
 #  park_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_id    :integer
 #
 
 class Lane < ApplicationRecord
   belongs_to :park
-  has_many :users, through: :lane_users, dependent: :destroy
-  has_many :lane_users, dependent: :destroy
-  accepts_nested_attributes_for :lane_users
+  belongs_to :user
 
   validates :name, presence: true
   validates :items, presence: true
   validates :park_id, presence: true
+  validates :user_id, presence: true
 
 end

@@ -21,8 +21,7 @@ class User < ApplicationRecord
 
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :lanes, through: :lane_users, dependent: :destroy
-  has_many :lane_users, dependent: :destroy
+  has_many :lanes, dependent: :destroy
 
   mount_uploader :image, ImageUploader
 
