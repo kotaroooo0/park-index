@@ -2,29 +2,31 @@ require "rails_helper"
 
 describe SessionsController do
 
-  # def facebook_login_setup
-  #   OmniAuth.config.test_mode = true
-  #   OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new(
-  #     {
-  #       :provider => 'facebook',
-  #       :uid => '123545',
-  #       'info' => {
-  #         :name => 'mockuser'
-  #       }
-  #     }
-  #   )
-  # end
-  #
-  # def facebook_login_failure
-  #   OmniAuth.config.mock_auth[:facebook] = :invalid_credentials
-  # end
+  def facebook_login
+    OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new(
+      {
+        :provider => 'facebook',
+        :uid => '123545',
+        'info' => {
+          :name => 'mockuser'
+        }
+      }
+    )
+  end
 
   render_views
 
-  describe "GET #callback" do
+  describe "POST #callback" do
 
     before do
+      OmniAuth.config.test_mode = true
+      # request.env['omniauth.auth'] = facebook_login_setup
+      # # request.env["devise.mapping"] = Devise.mappings[:facebook]
+      # Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:facebook]
+      # Rails.application.env_config['omniauth.auth'] = facebook_login_setup
+      # facebook_login
       # get :callback
+      # get '/auth/facebook/callback'
     end
 
 
