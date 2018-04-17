@@ -31,6 +31,9 @@ gem 'omniauth-instagram'
 # for scraping
 gem 'mechanize'
 
+# for model
+gem 'annotate'
+
 # for paginate
 gem 'kaminari'
 gem 'kaminari-bootstrap'

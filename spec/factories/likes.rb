@@ -9,12 +9,9 @@
 #  updated_at :datetime         not null
 #
 
-class Like < ApplicationRecord
-  belongs_to :comment, counter_cache: :like_count
-  belongs_to :user
-
-  validates :user_id, presence: true
-  validates :comment_id, presence: true
-  validates_uniqueness_of :comment_id, scope: :user_id
-
+FactoryBot.define do
+  factory :like do
+    user_id 1
+    comment_id 1
+  end
 end
