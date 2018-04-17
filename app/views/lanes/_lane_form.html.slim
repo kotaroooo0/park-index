@@ -11,6 +11,7 @@ button.btn.btn-outline-info.btn-block.rounded-0 data-target="#createModal" data-
           - @lane ||= Lane.new
           = form_for @lane do |f|
             = hidden_field_tag :park_id, park.id
+            = f.hidden_field :user_id, :value => session[:user_id]
             = render 'shared/error_messages', object: f.object
             .items-form
               = f.label "名前を入力"

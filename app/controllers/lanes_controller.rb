@@ -1,5 +1,7 @@
 class LanesController < ApplicationController
 
+  before_action :logged_in_user?
+
   def create
     @lane = Park.find(params[:park_id]).lanes.build(lane_params)
     if @lane.save
@@ -31,7 +33,7 @@ class LanesController < ApplicationController
   private
 
   def lane_params
-    params.require(:lane).permit(:name, :items)
+    params.require(:lane).permit(:name, :items, :user_id)
   end
 
 end

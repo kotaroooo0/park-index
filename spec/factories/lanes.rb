@@ -15,8 +15,9 @@ FactoryBot.define do
   factory :lane do
     association :park
     association :user
+    name { Faker::Lorem.sentence}
+    items { Faker::Lorem.sentence }
     user_id 1
     park_id 1
-    body { Faker::Lorem.sentence }
   end
 end

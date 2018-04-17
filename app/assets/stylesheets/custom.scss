@@ -61,9 +61,12 @@ a {
 }
 
 // park_show
-.each-lane{
-  .name{
+.each-lane {
+  .name {
     font-size: 1.1em;
+  }
+  .lane-user {
+    float: right;
   }
 }
 

@@ -1,12 +1,17 @@
-.each-lane.bg-light.p-3.mb-2
+.each-lane.bg-light.p-3.mb-4
   .name.border-bottom.mb-1 = lane.name
   .items = lane.items
-  a.text-dark data-target=("#modal-<%= lane.id %>") data-toggle="modal" href="#" = fa_icon "edit"
-  = link_to (fa_icon "trash"), lane, method: :delete, data: { confirm: "本当に削除しますか?" }, class: "text-dark pl-1"
-.modal.fade aria-labelledby="myModalLabel" id=("modal-<%= lane.id %>") role="dialog" tabindex="-1"
+  - if session[:user_id].present?
+    a.text-dark data-target=("#modal-#{lane.id}") data-toggle="modal" href="#" = fa_icon "edit"
+    = link_to (fa_icon "trash"), lane, method: :delete, data: { confirm: "本当に削除しますか?" }, class: "text-dark pl-1"
+    = link_to (image_tag(lane.user.profile_image, {alt: "profile_pic", height: 60, class: "rounded"})), lane.user, class: "lane-user"
+
+.modal.fade aria-labelledby="myModalLabel" id=("modal-#{lane.id}") role="dialog" tabindex="-1"
   .modal-dialog role="document"
     .modal-content
       .modal-header
+        = lane.name
+        = lane.items
         h5#exampleModalLabel.modal-title レーンを編集
         button.close aria-label="閉じる" data-dismiss="modal" type="button"
           span aria-hidden="true" &times;
@@ -14,6 +19,7 @@
         .lane-form
           = form_for lane, :url => lane_path do |f|
             = hidden_field_tag :lane_id, lane.id
+            = f.hidden_field :user_id, :value => session[:user_id]
             = render 'shared/error_messages', object: f.object
             .items-form
               = f.label "名前を変更"
