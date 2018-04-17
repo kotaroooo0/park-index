@@ -7,7 +7,6 @@ describe ParksController do
   describe "GET #index" do
 
     before do
-      create(:area)
       @hakuba = create(:skiresort, name: "白馬")
       @myoko = create(:skiresort, name: "妙高")
       @hakuba.parks.build(name: "47parks", area_id: 1, description: "description", picture: "http://keijiokamoto.com/system/wp-content/uploads/2016/11/hakuba47park2013-5.jpg").save
@@ -32,7 +31,6 @@ describe ParksController do
   describe "GET #show" do
 
     before do
-      create(:area)
       @hakuba = create(:skiresort, name: "白馬")
       @myoko = create(:skiresort, name: "妙高")
       @hakuba_park = @hakuba.parks.build(id: 1, name: "hakuba_park", area_id: 1, description: "description", picture: "http://keijiokamoto.com/system/wp-content/uploads/2016/11/hakuba47park2013-5.jpg")

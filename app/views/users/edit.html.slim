@@ -26,7 +26,7 @@
               = f.text_field :age, class: 'form-control', placeholder: @user.age
             .area-form.mt-2
               = f.label "エリア"
-              = f.select :area_id, Area.names, {prompt: '選択してください'}, class: 'form-control'
+              = f.select :area_id, Constants::Area.all.map{ |elem| [elem.name, elem.id] }, {prompt: '選択してください'}, class: 'form-control'
             .homegelaende-form.mt-2
               = f.label "ホームゲレンデ"
               = f.text_field :home_gelaende, class: 'form-control', placeholder: @user.home_gelaende

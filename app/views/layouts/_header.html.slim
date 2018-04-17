@@ -9,13 +9,13 @@ nav.navbar.navbar-expand-lg.navbar-dark.mb-3.bg-info
       li class=("nav-item dropdown #{'active' if (controller.controller_name + controller.action_name) == 'skiresortsindex'}")
         a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" スキー場
         .dropdown-menu aria-labelledby="navbarDropdown"
-          - Area.all.each do |area|
+          - Constants::Area.all.each do |area|
             - next if area.name == "未設定"
             = link_to "#{area.name}エリア", skiresorts_path(area_id: area.id), class: "dropdown-item"
       li class=("nav-item dropdown #{'active' if (controller.controller_name + controller.action_name) == 'parksindex'}")
         a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" パーク
         .dropdown-menu aria-labelledby="navbarDropdown"
-          - Area.all.each do |area|
+          - Constants::Area.all.each do |area|
             - next if area.name == "未設定"
             = link_to "#{area.name}エリア", parks_path(area_id: area.id), class: "dropdown-item"
       li class=("nav-item #{'active' if (controller.controller_name + controller.action_name) == 'inquiriesnew'}")

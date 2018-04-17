@@ -14,11 +14,11 @@
       span
         = fa_icon "angle-double-right"
         | 住んでいるエリア:
-        - if @user.area.name.blank? || @user.area.name == "未設定"
+        - if Constants::Area.find(@user.area_id).name.blank? || Constants::Area.find(@user.area_id).name == "未設定"
           small
             | (エリアは未設定です)
         - else
-          = @user.area.name
+          = Constants::Area.find(@user.area_id).name
     .homegelaende
       span
         = fa_icon "angle-double-right"

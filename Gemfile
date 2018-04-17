@@ -33,6 +33,7 @@ gem 'mechanize'
 
 # for model
 gem 'annotate'
+gem 'active_hash'
 
 # for paginate
 gem 'kaminari'

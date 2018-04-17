@@ -21,14 +21,12 @@ class User < ApplicationRecord
 
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
-  belongs_to :area
 
   mount_uploader :image, ImageUploader
 
   validates :name, presence: true, length: { maximum: 30 }
-
   validates :self_introduction, length: { maximum: 140 }
-
+  validates :home_gelaende, length: { maximum: 20 }
   enum gender: { male: 0, female: 1 }
 
   def self.create_with_facebook(auth)

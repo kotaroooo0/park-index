@@ -10,6 +10,17 @@
         p.card-text.area-introduciton
           = fa_icon "share-square"
           = @park.description
+        p.card-text.mb-0
+          - gelaendeCondition = @park.skiresort.getGelaendeCondition
+          span
+            = fa_icon "angle-double-right lg"
+            | 積雪:
+            = gelaendeCondition["snowfall"]
+          span.ml-2
+            = fa_icon "angle-double-right lg"
+            | ゲレンデ状況:
+            = gelaendeCondition["range"]
+        p.card-text
       .card-body.bg-white
         .row
           .col-md-5.text-center

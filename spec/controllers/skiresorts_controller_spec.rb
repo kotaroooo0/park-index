@@ -7,7 +7,6 @@ describe SkiresortsController do
   describe "GET #index" do
 
     before do
-      create(:area)
       @hakuba = create(:skiresort, name: "白馬")
       @myoko = create(:skiresort, name: "妙高")
       get :index, params: {area_id: 1}
@@ -31,7 +30,6 @@ describe SkiresortsController do
   describe "GET #search" do
 
     before do
-      create(:area)
       @hakuba = create(:skiresort, name: "白馬")
       @myoko = create(:skiresort, name: "妙高")
       get :search, params: {search: "白馬"}

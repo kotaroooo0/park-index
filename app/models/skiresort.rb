@@ -17,7 +17,6 @@
 class Skiresort < ApplicationRecord
 
   has_many :parks, dependent: :destroy
-  belongs_to :area
 
   scope :have_parks, -> {where.not(park_count: 0)}
 

@@ -8,15 +8,6 @@
       = skiresort.name
     p.card-text
       = skiresort.description
-    - gelaendeCondition = skiresort.getGelaendeCondition
-    p
-      = fa_icon "angle-double-right lg"
-      | 積雪:
-      = gelaendeCondition["snowfall"]
-    p
-      = fa_icon "angle-double-right lg"
-      | ゲレンデ状況:
-      = gelaendeCondition["range"]
   .card-footer.bg-white
     h5.card-text パーク
     - if skiresort.parks.blank?

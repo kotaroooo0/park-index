@@ -7,7 +7,6 @@ describe UsersController do
   describe "GET #show" do
 
     before do
-      create(:area)
       create(:skiresort)
       3.times { create(:user) }
       @user = create(:user)
@@ -40,7 +39,6 @@ describe UsersController do
   describe "GET #edit" do
 
     before do
-      create(:area)
       3.times { create(:user) }
       @user = create(:user)
       get :edit, params: { id: @user.id }
@@ -63,7 +61,6 @@ describe UsersController do
   describe "PATCH #update" do
 
     before do
-      create(:area)
       3.times { create(:user) }
       @user = create(:user)
       patch :update, params: { id: @user.id, user: { image: "", name: "new_name", area_id: 1, home_gelaende: "home", gender: "male", age: 22, self_introduction: "" } }
