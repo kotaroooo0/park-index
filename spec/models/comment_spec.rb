@@ -1,19 +1,13 @@
 # == Schema Information
 #
-# Table name: likes
+# Table name: comments
 #
 #  id         :integer          not null, primary key
 #  user_id    :integer
-#  comment_id :integer
+#  park_id    :integer
+#  body       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  like_count :integer          default(0)
 #
 
-FactoryBot.define do
-  factory :like do
-    association :user
-    association :comment
-    user_id 1
-    comment_id 1
-  end
-end

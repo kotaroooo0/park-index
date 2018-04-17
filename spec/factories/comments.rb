@@ -13,8 +13,10 @@
 
 FactoryBot.define do
   factory :comment do
+    association :park
+    association :user
     user_id 1
     park_id 1
-    body "body"
+    body { Faker::Lorem.sentence }
   end
 end

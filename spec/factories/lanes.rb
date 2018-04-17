@@ -1,19 +1,21 @@
 # == Schema Information
 #
-# Table name: likes
+# Table name: lanes
 #
 #  id         :integer          not null, primary key
-#  user_id    :integer
-#  comment_id :integer
+#  name       :string
+#  items      :text
+#  park_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 FactoryBot.define do
-  factory :like do
+  factory :lane do
+    association :park
     association :user
-    association :comment
     user_id 1
-    comment_id 1
+    park_id 1
+    body { Faker::Lorem.sentence }
   end
 end

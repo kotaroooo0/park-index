@@ -53,6 +53,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem "rspec-rails"
+  gem "faker"
   gem "factory_bot_rails"
   gem "guard-rspec"
   gem "spring-commands-rspec"
@@ -67,7 +68,6 @@ end
 
 group :test do
   gem 'rails-controller-testing', '1.0.2'
-  gem "faker"
   gem "database_cleaner"
   gem "launchy"
   gem "selenium-webdriver"

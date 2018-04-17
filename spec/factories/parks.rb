@@ -15,9 +15,10 @@
 
 FactoryBot.define do
   factory :park do
+    association :skiresort
     sequence(:name) { |n| "パーク#{n}" }
     area_id 1
     skiresort_id 1
-    description "description"
+    description { Faker::Lorem.sentence }
   end
 end

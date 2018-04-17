@@ -17,11 +17,3 @@
 #  home_gelaende     :string
 #
 
-FactoryBot.define do
-  factory :user do
-    name { Faker::Name.name}
-    age { Faker::Number.between(15, 45) }
-    gender { Random.rand(0..1) }
-    area_id 1
-  end
-end
