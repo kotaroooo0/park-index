@@ -62,22 +62,49 @@ describe UsersController do
 
     before do
       3.times { create(:user) }
-      @user = create(:user)
-      patch :update, params: { id: @user.id, user: { image: "", name: "new_name", area_id: 1, home_gelaende: "home", gender: "male", age: 22, self_introduction: "" } }
+      @user = create(:user, name: "name", home_gelaende: "gelaende")
     end
 
     it "レスポンスが302であること" do
+      patch :update, params: { id: @user.id, user: attributes_for(:user)}
       expect(response.status).to eq 302
     end
 
-    it "データベースのユーザーが更新されること" do
+    context "有効な属性の場合" do
+
+      it "要求された@userを取得すること" do
+        patch :update, params: { id: @user.id, user: attributes_for(:user) }
+        expect(assigns(:user)).to eq(@user)
+      end
+
+      it "@userの属性を変更すること" do
+        patch :update, params: { id: @user.id, user: attributes_for(:user, name: "new_name", home_gelaende: "new_gelaende") }
+        @user.reload
+        expect(@user.name).to eq('new_name')
+        expect(@user.home_gelaende).to eq('new_gelaende')
+      end
+
+      it "users#showにリダイレクトされること" do
+        patch :update, params: { id: @user.id, user: attributes_for(:user) }
+        expect(response).to redirect_to user_path(assigns(:user))
+      end
+
     end
 
-    it "users#showにリダイレクトされること" do
-      expect(response).to redirect_to user_path(assigns(:user))
-    end
+    context "無効な属性の場合" do
 
+      it "@userの属性を変更すること" do
+        patch :update, params: { id: @user.id, user: attributes_for(:user, name: nil, home_gelaende: "new_gelaende") }
+        @user.reload
+        expect(@user.name).to eq('name')
+        expect(@user.home_gelaende).not_to eq('new_gelaende')
+      end
+
+      it "editテンプレートがrenderされる" do
+        patch :update, params: { id: @user.id, user: attributes_for(:user, name: nil, home_gelaende: "new_gelaende") }
+        expect(response).to render_template :edit
+      end
+
+    end
   end
-
-
 end
