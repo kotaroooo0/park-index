@@ -1,6 +1,7 @@
 class LanesController < ApplicationController
 
   before_action :logged_in_user?
+  before_action :correct_user?, only: :destroy
 
   def create
     @lane = Park.find(params[:park_id]).lanes.build(lane_params)
