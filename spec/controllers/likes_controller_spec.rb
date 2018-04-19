@@ -4,7 +4,7 @@ describe LikesController do
 
   render_views
 
-  describe "POST #create" do
+  describe "ログインしたユーザーのとき" do
 
     before do
       @user = create(:user, id: 1)
@@ -12,60 +12,89 @@ describe LikesController do
       session[:user_id] = 1
     end
 
-    it "レスポンスが200であること" do
-      post :create, params: attributes_for(:like, user_id: 1, comment_id: 1), xhr: true
-      expect(response.status).to eq 200
-    end
+    describe "POST #create" do
 
-    it "データベースにいいねが登録されること" do
-      expect{
+      it "レスポンスが200であること" do
         post :create, params: attributes_for(:like, user_id: 1, comment_id: 1), xhr: true
-      }.to change(Like, :count).by(1)
+        expect(response.status).to eq 200
+      end
+
+      it "データベースにいいねが登録されること" do
+        expect{
+          post :create, params: attributes_for(:like, user_id: 1, comment_id: 1), xhr: true
+        }.to change(Like, :count).by(1)
+      end
+
+      it "@likesに適当ないいねが割り当てられる" do
+        post :create, params: attributes_for(:like, user_id: 1, comment_id: 1), xhr: true
+        expect(assigns(:likes)).to eq Like.where(comment_id: 1)
+      end
+
+      it "@commentに適当なコメントが割り当てられる" do
+        post :create, params: attributes_for(:like, user_id: 1, comment_id: 1), xhr: true
+        expect(assigns(:comment)).to eq Comment.find(1)
+      end
+
+
     end
 
-    it "@likesに適当ないいねが割り当てられる" do
-      post :create, params: attributes_for(:like, user_id: 1, comment_id: 1), xhr: true
-      expect(assigns(:likes)).to eq Like.where(comment_id: 1)
+    describe "DELETE #destroy" do
+
+      before  do
+        skip
+        @like = create(:like, user_id: 1, comment_id: 1)
+      end
+
+      it "レスポンスが200であること" do
+        delete :destroy, params: attributes_for(:like, comment_id: 1), xhr: true
+        expect(response.status).to eq 200
+      end
+
+      it "データベースからいいねが削除されること" do
+        expect{
+          delete :destroy, params: attributes_for(:like, comment_id: 1), xhr: true
+        }.to change(Like, :count).by(-1)
+      end
+
+      it "@likesに適当ないいねが割り当てられる" do
+        delete :destroy, params: attributes_for(:like, comment_id: 1), xhr: true
+        expect(assigns(:likes)).to eq Like.where(comment_id: 1)
+      end
+
+      it "@commentに適当なコメントが割り当てられる" do
+        delete :destroy, params: attributes_for(:like, comment_id: 1), xhr: true
+        expect(assigns(:comment)).to eq Comment.find(1)
+      end
     end
-
-    it "@commentに適当なコメントが割り当てられる" do
-      post :create, params: attributes_for(:like, user_id: 1, comment_id: 1), xhr: true
-      expect(assigns(:comment)).to eq Comment.find(1)
-    end
-
-
   end
 
-  describe "DELETE #destroy" do
+  describe "ゲストユーザーのとき" do
 
-    before  do
-      skip
+    before do
       @user = create(:user, id: 1)
       @comment = create(:comment, id: 1)
-      @like = create(:like, user_id: 1, comment_id: 1)
-      session[:user_id] = 1
     end
 
-    it "レスポンスが200であること" do
-      delete :destroy, params: attributes_for(:like, comment_id: 1), xhr: true
-      expect(response.status).to eq 200
+    describe "POST #create" do
+
+      it "ログインを要求すること" do
+        post :create, params: attributes_for(:like, user_id: 1, comment_id: 1), xhr: true
+        expect(response).to redirect_to login_url
+      end
+
     end
 
-    it "データベースからいいねが削除されること" do
-      expect{
+    describe "DELETE #destroy" do
+
+      before  do
+        skip
+        @like = create(:like, user_id: 1, comment_id: 1)
+      end
+
+      it "ログインを要求すること" do
         delete :destroy, params: attributes_for(:like, comment_id: 1), xhr: true
-      }.to change(Like, :count).by(-1)
-    end
-
-    it "@likesに適当ないいねが割り当てられる" do
-      delete :destroy, params: attributes_for(:like, comment_id: 1), xhr: true
-      expect(assigns(:likes)).to eq Like.where(comment_id: 1)
-    end
-
-    it "@commentに適当なコメントが割り当てられる" do
-      delete :destroy, params: attributes_for(:like, comment_id: 1), xhr: true
-      expect(assigns(:comment)).to eq Comment.find(1)
+        expect(response).to redirect_to login_url
+      end
     end
   end
-
 end
