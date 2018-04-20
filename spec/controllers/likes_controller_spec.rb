@@ -1,4 +1,4 @@
-require "rails_helper"
+require 'rails_helper'
 
 describe LikesController do
 
@@ -9,7 +9,7 @@ describe LikesController do
     before do
       @user = create(:user, id: 1)
       @comment = create(:comment, id: 1)
-      session[:user_id] = 1
+      set_user_session @user
     end
 
     describe "POST #create" do
@@ -79,7 +79,7 @@ describe LikesController do
 
       it "ログインを要求すること" do
         post :create, params: attributes_for(:like, user_id: 1, comment_id: 1), xhr: true
-        expect(response).to redirect_to login_url
+        expect(response).to require_login
       end
 
     end
@@ -93,7 +93,7 @@ describe LikesController do
 
       it "ログインを要求すること" do
         delete :destroy, params: attributes_for(:like, comment_id: 1), xhr: true
-        expect(response).to redirect_to login_url
+        expect(response).to require_login
       end
     end
   end

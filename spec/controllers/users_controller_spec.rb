@@ -93,7 +93,7 @@ describe UsersController do
 
     context "無効な属性の場合" do
 
-      it "@userの属性を変更すること" do
+      it "@userの属性を変更しないこと" do
         patch :update, params: { id: @user.id, user: attributes_for(:user, name: nil, home_gelaende: "new_gelaende") }
         @user.reload
         expect(@user.name).to eq('name')

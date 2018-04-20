@@ -7,7 +7,7 @@ class LanesController < ApplicationController
     @lane = Park.find(params[:park_id]).lanes.build(lane_params)
     if @lane.save
       flash[:info] = "レーンを反映しました。"
-      redirect_to request.referrer || root_url
+      redirect_to @lane.park
     else
       flash[:info] = "レーンの反映に失敗しました。"
       redirect_to @lane.park

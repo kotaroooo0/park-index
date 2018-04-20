@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build(comment_params)
     if @comment.save
       flash[:info] = "コメントを投稿しました。"
-      redirect_to request.referrer || root_url
+      redirect_to @comment.park
     else
       flash[:danger] = "コメントの投稿に失敗しました。"
       redirect_to @comment.park
