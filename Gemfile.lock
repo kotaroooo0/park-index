@@ -380,7 +380,7 @@ DEPENDENCIES
   bootstrap (~> 4.0.0)
   bootstrap-social-rails
   byebug
-  capybara (~> 2.13)
+  capybara
   carrierwave
   coffee-rails (~> 4.2)
   config

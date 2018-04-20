@@ -55,7 +55,10 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
+  OmniAuth.config.test_mode = true
+
   config.include FactoryBot::Syntax::Methods
-  config.include LoginMacros, :type => :controller
+  config.include LoginMacros
+  config.include OmniauthMacros
 
 end

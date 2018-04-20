@@ -1,7 +1,6 @@
-module OmniAuthTestHelper
+module OmniauthMacros
 
-  def facebook_login_setup
-    OmniAuth.config.test_mode = true
+  def set_facebook_omniauth
     OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new(
       {
         :provider => 'facebook',
@@ -11,9 +10,10 @@ module OmniAuthTestHelper
         }
       }
     )
+    OmniAuth.config.add_mock(:facebook, {uid: '12345'})
   end
 
-  def facebook_login_failure
+  def set_invalid_facebook_omniauth
     OmniAuth.config.mock_auth[:facebook] = :invalid_credentials
   end
 
