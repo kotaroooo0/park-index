@@ -16,4 +16,14 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   get '/login', to: 'static_pages#login'
 
+  namespace :api, { format: 'json' } do
+    namespace :v1 do
+      resources :skiresorts
+      resources :parks
+      resources :users
+      resources :lanes
+      resources :inquiries
+    end
+  end
+
 end
