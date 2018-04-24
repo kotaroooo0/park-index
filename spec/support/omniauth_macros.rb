@@ -1,16 +1,20 @@
 module OmniauthMacros
 
-  def set_facebook_omniauth
+  def facebook_mock
     OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new(
       {
-        :provider => 'facebook',
-        :uid => '123545',
-        'info' => {
-          :name => 'mockuser'
+        provider: 'facebook',
+        uid: '12345',
+        info: {
+          name: 'mockuser',
+          email: 'sample@test.com'
+        },
+        credentials: {
+          token: 'hogefuga'
         }
       }
     )
-    OmniAuth.config.add_mock(:facebook, {uid: '12345'})
+    # OmniAuth.config.add_mock(:facebook, {uid: '12345'})
   end
 
   def set_invalid_facebook_omniauth
