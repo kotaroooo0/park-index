@@ -56,10 +56,6 @@ facebook:
 
 ```
 
-## ライセンス
-
-[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
-
 ## 作成
 
 [k33asby](https://github.com/k33asby)
