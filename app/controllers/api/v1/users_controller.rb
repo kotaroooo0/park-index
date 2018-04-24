@@ -1,11 +1,12 @@
-module Api
-  module V1
-    class UsersController < ApplicationController
+class Api::V1::UsersController < ApplicationController
 
-      def index
-        @users = User.all
-      end
-
-    end
+  def index
+    @users = User.all
+    render "api/v1/users/index", :handlers => 'jbuilder'
   end
+
+  def show
+    @user = User.find(params[:id])
+  end
+
 end
